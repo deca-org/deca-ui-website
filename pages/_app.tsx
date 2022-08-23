@@ -1,8 +1,19 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { DecaUIProvider } from "@deca-ui/react";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <DecaUIProvider
+      theme={{
+        fonts: { normal: "Roboto", mono: "JetBrains Mono" },
+        radii: {
+          sm: "15px",
+        },
+      }}
+    >
+      <Component {...pageProps} />
+    </DecaUIProvider>
+  );
+};
 
-export default MyApp
+export default MyApp;
