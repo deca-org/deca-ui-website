@@ -1,19 +1,34 @@
 import { Box, Grid, Text, Container, Button } from "@deca-ui/react";
 import { GitHub, Heart, Twitter, Menu } from "react-feather";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [scrollPosition, setScrollPositon] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPositon(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Box
       css={{
         position: "fixed",
         top: 0,
         right: 0,
-        bg: "$bg",
+        bg: scrollPosition > 0 ? "$white" : "$bg",
         width: "100%",
         height: "$19",
-        borderBottom: "solid $gray700 2px",
         zIndex: "$max",
+        boxShadow: scrollPosition > 0 ? "$default" : "none",
+        transition: "$default",
       }}
     >
       <Container px="md">
