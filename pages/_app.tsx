@@ -6,6 +6,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <DecaUIProvider
       theme={{
         fonts: { normal: "Roboto", mono: "JetBrains Mono" },
+        colors: {
+          bg: "#FBE8DE",
+        },
         radii: {
           sm: "15px",
         },

@@ -9,13 +9,22 @@ import {
   Switch,
   Checkbox,
   Radio,
+  Popover,
 } from "@deca-ui/react";
 import Layout from "../components/Layout";
+import { Copy } from "react-feather";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Box css={{ overflow: "hidden" }}>
+      <Box
+        css={{
+          overflow: "hidden",
+          position: "relative",
+          height: "100vh",
+          bg: "$bg",
+        }}
+      >
         <Container px="md">
           <Grid.Container
             xs={12}
@@ -27,7 +36,7 @@ const Home: NextPage = () => {
               overflow: "visible",
             }}
           >
-            <Grid css={{ minWidth: "50%" }}>
+            <Grid css={{ zIndex: 2 }}>
               <Text
                 as="h1"
                 css={{
@@ -43,7 +52,7 @@ const Home: NextPage = () => {
                 as="h6"
                 css={{
                   mt: "$3",
-                  color: "$gray600",
+                  color: "$gray700",
                   fontWeight: "$normal",
                   pr: "$3",
                 }}
@@ -67,11 +76,8 @@ const Home: NextPage = () => {
                 <Button size="lg">Get Started</Button>
                 <Box
                   css={{
-                    bg: "$white",
                     borderStyle: "solid",
                     borderWidth: "$normal",
-                    borderColor: "$gray300",
-                    color: "$gray700",
                     fontFamily: "$mono",
                     br: "$sm",
                     height: "$10",
@@ -79,6 +85,7 @@ const Home: NextPage = () => {
                     fontSize: "$body",
                     display: "flex",
                     alignItems: "center",
+                    fontWeight: "bold",
                     "@n": {
                       px: "$3",
                       overflow: "scroll",
@@ -90,12 +97,40 @@ const Home: NextPage = () => {
                   }}
                 >
                   $ npm install @deca-ui/react
+                  <Popover placement="top" offset={4}>
+                    <Popover.Trigger>
+                      <Button
+                        size="sm"
+                        icon={<Copy />}
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            "npm install @deca-ui/react"
+                          );
+                        }}
+                        variant="ghost"
+                        css={{
+                          br: "$xs",
+                          ml: "$2",
+                        }}
+                      />
+                    </Popover.Trigger>
+                    <Popover.Content
+                      css={{
+                        m: "$n",
+                        p: "$1",
+                        px: "$3",
+                        bg: "$black",
+                        color: "$white",
+                      }}
+                    >
+                      Copied
+                    </Popover.Content>
+                  </Popover>
                 </Box>
               </Box>
             </Grid>
             <Grid
               css={{
-                maxWidth: "50%",
                 "@n": {
                   display: "none",
                 },
@@ -106,6 +141,9 @@ const Home: NextPage = () => {
             >
               <Box
                 css={{
+                  bg: "$white",
+                  zIndex: 1,
+                  position: "relative",
                   boxShadow: "$default",
                   minWidth: "9999px",
                   br: "$xl",
@@ -172,9 +210,12 @@ const Home: NextPage = () => {
                     <Input
                       variant="outlined"
                       placeholder="Email Address"
+                      focusColor="warning"
                       pill
                     />
-                    <Button pill>Submit Form</Button>
+                    <Button pill color="warning">
+                      Submit Form
+                    </Button>
                   </Box>
                   <Box
                     css={{
@@ -184,9 +225,9 @@ const Home: NextPage = () => {
                       ml: "$5",
                     }}
                   >
-                    <Switch initialToggle label="Switch" />
-                    <Checkbox initialCheck label="Checkbox" />
-                    <Radio initialSelect label="Radio" />
+                    <Switch initialToggle label="Switch" color="warning" />
+                    <Checkbox initialCheck label="Checkbox" color="warning" />
+                    <Radio initialSelect label="Radio" color="warning" />
                   </Box>
                 </Box>
               </Box>

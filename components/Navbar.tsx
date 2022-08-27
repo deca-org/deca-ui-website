@@ -9,10 +9,11 @@ const Navbar = () => {
         position: "fixed",
         top: 0,
         right: 0,
-        bg: "$white",
+        bg: "$bg",
         width: "100%",
         height: "$19",
-        borderBottom: "solid $gray100 2px",
+        borderBottom: "solid $gray700 2px",
+        zIndex: "$max",
       }}
     >
       <Container px="md">
@@ -37,7 +38,7 @@ const Navbar = () => {
               css={{
                 fontFamily: "$mono",
                 fontWeight: "$bold",
-                ml: "calc($2 + $0)",
+                ml: "$2",
               }}
             >
               DecaUI
