@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@deca-ui/react": "^1.4.8",
     "@iconfu/svg-inject": "^1.2.3",
     "@types/react-syntax-highlighter": "^15.5.5",
     "next": "12.2.5",

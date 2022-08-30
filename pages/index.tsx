@@ -12,19 +12,12 @@ import {
   Checkbox,
   Radio,
   Popover,
+  TextAs,
 } from "@deca-ui/react";
-import { darken } from "polished";
 import Layout from "../components/Layout";
 import { Prism as SyntaxHighligher } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {
-  Copy,
-  Moon,
-  Layout as LayoutIcon,
-  Command,
-  Edit,
-  Watch,
-} from "react-feather";
+import { Copy, Moon, Layout as LayoutIcon, Command, Edit } from "react-feather";
 
 interface GeneralProps {
   icon: any;
@@ -110,8 +103,8 @@ const Home: NextPage = () => {
         >
           <Container px="md">
             <Grid.Container
-              xs={12}
-              xl={6}
+              n={12}
+              lg={6}
               alignItems="center"
               spacing="md"
               css={{
@@ -122,11 +115,13 @@ const Home: NextPage = () => {
               <Grid css={{ zIndex: 2 }}>
                 <Text
                   as="h1"
+                  size={{
+                    "@n": "h4",
+                    "@xs": "h3",
+                    "@sm": "h1",
+                  }}
                   css={{
                     fontFamily: "$mono",
-                    "@n": { fontSize: "$h4", lineHeight: "$3" },
-                    "@xs": { fontSize: "$h3", lineHeight: "$4" },
-                    "@sm": { fontSize: "$h1", lineHeight: "$6" },
                   }}
                 >
                   Make beautiful websites regardless of your design experience.
@@ -170,13 +165,13 @@ const Home: NextPage = () => {
                       alignItems: "center",
                       fontWeight: "bold",
                       justifyContent: "center",
-                      "@sm": {
-                        px: "$5",
-                        overflow: "visible",
-                      },
+                      px: "$3",
                       "@n": {
-                        px: "$3",
-                        overflow: "scroll",
+                        overflowX: "scroll",
+                        overflowY: "hidden",
+                      },
+                      "@xs": {
+                        overflow: "hidden",
                       },
                     }}
                   >
@@ -273,9 +268,7 @@ const Home: NextPage = () => {
                     >
                       {[1, 2, 3, 4, 5, 6].map((i) => (
                         <Text
-                          as={
-                            `h${i}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-                          }
+                          as={`h${i}` as TextAs}
                           css={{
                             m: "$n",
                             lineHeight: "$2",
@@ -343,7 +336,7 @@ const Home: NextPage = () => {
           <Container px="md">
             <Box css={{ py: "$5" }}>
               <Box css={{ pb: "$6" }}>
-                <Grid.Container xs={12} md={3} spacing="md">
+                <Grid.Container n={12} sm={6} lg={3} spacing="md">
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Themable" icon={<Edit />}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -370,15 +363,17 @@ const Home: NextPage = () => {
                   </Grid>
                 </Grid.Container>
               </Box>
-              <Grid.Container xs={12} md={6} spacing="lg" alignItems="center">
+              <Grid.Container n={12} sm={6} spacing="lg" alignItems="center">
                 <Grid>
                   <Text
                     as="h2"
+                    size={{
+                      "@n": "h5",
+                      "@xs": "h4",
+                      "@sm": "h2",
+                    }}
                     css={{
                       fontFamily: "$mono",
-                      "@n": { fontSize: "$h5", lineHeight: "$3" },
-                      "@xs": { fontSize: "$h4", lineHeight: "$4" },
-                      "@sm": { fontSize: "$h2", lineHeight: "$5" },
                     }}
                   >
                     Apply your own theming decisions.
@@ -441,11 +436,13 @@ const Home: NextPage = () => {
             >
               <Text
                 as="h2"
+                size={{
+                  "@n": "h5",
+                  "@xs": "h4",
+                  "@sm": "h2",
+                }}
                 css={{
                   fontFamily: "$mono",
-                  "@n": { fontSize: "$h5", lineHeight: "$3" },
-                  "@xs": { fontSize: "$h4", lineHeight: "$4" },
-                  "@sm": { fontSize: "$h2", lineHeight: "$5" },
                 }}
                 center
               >
@@ -461,8 +458,8 @@ const Home: NextPage = () => {
               </Text>
             </Box>
             <Grid.Container
-              xs={12}
-              sm={6}
+              n={12}
+              xs={6}
               spacing="md"
               css={{
                 pt: "$4",

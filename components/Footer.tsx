@@ -19,7 +19,8 @@ const Footer = () => {
         }}
       >
         <Grid.Container
-          xs={12}
+          n={12}
+          lg={6}
           spacing="md"
           css={{
             "@n": {
@@ -30,7 +31,7 @@ const Footer = () => {
             },
           }}
         >
-          <Grid xl={6}>
+          <Grid>
             <Box
               css={{
                 br: "$sm",
@@ -39,11 +40,13 @@ const Footer = () => {
               <Box>
                 <Text
                   as="h3"
+                  size={{
+                    "@n": "h5",
+                    "@xs": "h4",
+                    "@sm": "h3",
+                  }}
                   css={{
                     fontFamily: "$mono",
-                    "@n": { fontSize: "$h5", lineHeight: "$3" },
-                    "@xs": { fontSize: "$h4", lineHeight: "$4" },
-                    "@sm": { fontSize: "$h3", lineHeight: "$4" },
                   }}
                 >
                   Ship your next project faster
@@ -89,13 +92,13 @@ const Footer = () => {
                     alignItems: "center",
                     fontWeight: "bold",
                     justifyContent: "center",
-                    "@sm": {
-                      px: "$5",
-                      overflow: "visible",
-                    },
+                    px: "$3",
                     "@n": {
-                      px: "$3",
-                      overflow: "scroll",
+                      overflowX: "scroll",
+                      overflowY: "hidden",
+                    },
+                    "@xs": {
+                      overflow: "hidden",
                     },
                   }}
                 >
@@ -141,71 +144,73 @@ const Footer = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid
-            xl={6}
-            css={{
-              display: "flex",
-              justifyContent: "flex-start",
-              gap: "$3",
-              flexDirection: "column",
-              "@xs": {
-                flexDirection: "row",
-              },
-              "@lg": {
-                justifyContent: "flex-end",
-              },
-            }}
-          >
+          <Grid>
             <Box
               css={{
-                color: "$secondary",
-                borderStyle: "solid",
-                borderWidth: "$normal",
-                borderColor: "$secondary",
-                bg: "$white",
-                br: "$sm",
-                dflex: "center",
-                p: "$4",
-                transition: "$default",
-                cursor: "pointer",
-                "&:hover": {
-                  bg: "$secondary-lighten-7",
+                display: "flex",
+                justifyContent: "flex-start",
+                gap: "$3",
+                flexDirection: "column",
+                "@xs": {
+                  flexDirection: "row",
                 },
                 "@lg": {
-                  width: "$35",
                   height: "100%",
+                  justifyContent: "flex-end",
                 },
               }}
             >
-              <Box>
-                <GitHub size={theme.sizes[7].value} />
-                <Text>For issues, pull requests and contributution.</Text>
+              <Box
+                css={{
+                  color: "$secondary",
+                  borderStyle: "solid",
+                  borderWidth: "$normal",
+                  borderColor: "$secondary",
+                  bg: "$white",
+                  br: "$sm",
+                  dflex: "center",
+                  p: "$4",
+                  transition: "$default",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bg: "$secondary-lighten-7",
+                  },
+                  "@lg": {
+                    width: "$35",
+                    height: "100%",
+                  },
+                }}
+              >
+                <Box>
+                  <GitHub size={theme.sizes[7].value} />
+                  <Text>For issues, pull requests and contributution.</Text>
+                </Box>
               </Box>
-            </Box>
-            <Box
-              css={{
-                color: "$primary",
-                borderStyle: "solid",
-                borderWidth: "$normal",
-                borderColor: "$primary",
-                bg: "$white",
-                br: "$sm",
-                dflex: "center",
-                p: "$4",
-                transition: "$default",
-                cursor: "pointer",
-                "&:hover": {
-                  bg: "$primary-lighten-7",
-                },
-                "@lg": {
-                  width: "$35",
-                  height: "100%",
-                },
-              }}
-            >
-              <Box>
-                <Twitter size={theme.sizes[7].value} />
-                <Text>For announcements, tips and general information.</Text>
+              <Box
+                css={{
+                  color: "$primary",
+                  borderStyle: "solid",
+                  borderWidth: "$normal",
+                  borderColor: "$primary",
+                  bg: "$white",
+                  br: "$sm",
+                  dflex: "center",
+                  p: "$4",
+                  transition: "$default",
+                  cursor: "pointer",
+                  "&:hover": {
+                    bg: "$primary-lighten-7",
+                  },
+                  "@lg": {
+                    width: "$35",
+                    height: "100%",
+                  },
+                }}
+              >
+                <Box>
+                  <Twitter size={theme.sizes[7].value} />
+                  <Text>For announcements, tips and general information.</Text>
+                </Box>
               </Box>
             </Box>
           </Grid>

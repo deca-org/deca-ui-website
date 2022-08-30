@@ -38,9 +38,9 @@ const Navbar = () => {
           justifyContent="center"
         >
           <Grid
-            xs={6}
-            lg={3}
-            xl={2}
+            n={6}
+            md={3}
+            lg={2}
             css={{
               display: "flex",
               justifyContent: "flex-start",
@@ -50,9 +50,9 @@ const Navbar = () => {
             <img src="/icon.svg" alt="Deca UI" width="35px" height="35px" />
             <Text
               as="h6"
+              weight="bold"
               css={{
                 fontFamily: "$mono",
-                fontWeight: "$bold",
                 ml: "$2",
               }}
             >
@@ -70,41 +70,41 @@ const Navbar = () => {
                 gap: "$5",
               },
             }}
-            lg={6}
-            xl={8}
+            md={6}
+            lg={8}
           >
             <Text
               as="p"
+              weight="medium"
               css={{
                 fontFamily: "$mono",
-                fontWeight: "$medium",
               }}
             >
               Documentation
             </Text>
             <Text
               as="p"
+              weight="medium"
               css={{
                 fontFamily: "$mono",
-                fontWeight: "$medium",
               }}
             >
               Products
             </Text>
             <Text
               as="p"
+              weight="medium"
               css={{
                 fontFamily: "$mono",
-                fontWeight: "$medium",
               }}
             >
               About Us
             </Text>
           </Grid>
           <Grid
-            xs={6}
-            lg={3}
-            xl={2}
+            n={6}
+            md={3}
+            lg={2}
             css={{
               "@n": {
                 display: "none",
@@ -124,7 +124,7 @@ const Navbar = () => {
           </Grid>
           {/* For Mobile */}
           <Grid
-            xs={6}
+            n={6}
             css={{
               "@n": {
                 display: "flex",
