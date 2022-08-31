@@ -15,8 +15,7 @@ import {
   TextAs,
 } from "@deca-ui/react";
 import Layout from "../components/Layout";
-import { Prism as SyntaxHighligher } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import CodeBlock from "../components/CodeBlock";
 import { Copy, Moon, Layout as LayoutIcon, Command, Edit } from "react-feather";
 
 interface GeneralProps {
@@ -391,25 +390,7 @@ const Home: NextPage = () => {
                   </Button>
                 </Grid>
                 <Grid>
-                  <Box
-                    css={{
-                      "& span": {
-                        textDecoration: "none!important",
-                      },
-                    }}
-                  >
-                    <SyntaxHighligher
-                      language="jsx"
-                      style={atomDark}
-                      customStyle={{
-                        borderRadius: "15px",
-                        padding: theme.space[4].value,
-                        fontSize: theme.fontSizes.body.value,
-                      }}
-                    >
-                      {ThemeExampleJSX}
-                    </SyntaxHighligher>
-                  </Box>
+                  <CodeBlock lg>{ThemeExampleJSX}</CodeBlock>
                 </Grid>
               </Grid.Container>
             </Box>
@@ -452,7 +433,7 @@ const Home: NextPage = () => {
             </Box>
             <Grid.Container
               n={12}
-              xs={6}
+              sm={6}
               spacing="md"
               css={{
                 pt: "$4",
@@ -466,30 +447,7 @@ const Home: NextPage = () => {
               justifyContent="center"
             >
               <Grid css={{ display: "flex", flex: "1 1 auto" }}>
-                <Box
-                  css={{
-                    width: "100%",
-                    height: "100%",
-
-                    "& span": {
-                      textDecoration: "none!important",
-                    },
-                  }}
-                >
-                  <SyntaxHighligher
-                    language="jsx"
-                    style={atomDark}
-                    customStyle={{
-                      margin: 0,
-                      height: "100%",
-                      borderRadius: "15px",
-                      padding: theme.space[4].value,
-                      fontSize: theme.fontSizes.body.value,
-                    }}
-                  >
-                    {GetStartedJSX}
-                  </SyntaxHighligher>
-                </Box>
+                <CodeBlock lg>{GetStartedJSX}</CodeBlock>
               </Grid>
               <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                 <Box
@@ -500,9 +458,6 @@ const Home: NextPage = () => {
                     height: "100%",
                     dflex: "center",
                     flexDirection: "column",
-                    borderStyle: "solid",
-                    borderWidth: "$normal",
-                    borderColor: "$gray200",
                   }}
                 >
                   <Box

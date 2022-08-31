@@ -39,8 +39,6 @@ export const AllRoutes = {
     "Switch",
     "Text",
     "DecaUIProvider",
-    "Switch",
-    "Text",
   ],
 };
 
@@ -54,7 +52,7 @@ const Sidebar = ({ currentPath }: SidebarProps) => (
       mt: "$4",
       pb: "$5",
       height: "calc(100% - $sizes$19 - $space$4)",
-      overflow: "scroll",
+      overflow: "auto",
     }}
   >
     {Object.entries(AllRoutes).map((category, idx) => {
@@ -196,7 +194,6 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
       px="md"
       css={{
         mt: "$3",
-        overflow: "visible",
       }}
     >
       <Grid.Container css={{ overflow: "visible" }}>

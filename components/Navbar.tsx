@@ -29,7 +29,7 @@ const MobileMenu = ({
       position: "fixed",
       top: "$sizes$19",
       bg: whiteBg ? "$white" : scrollPosition > 0 ? "$white" : "$bg",
-      overflow: "scroll",
+      overflow: "auto",
       height: "calc(100% - 64px)",
       pb: "$4",
     }}

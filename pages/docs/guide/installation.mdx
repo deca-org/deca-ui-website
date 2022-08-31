@@ -1,6 +1,64 @@
 import Layout from "../../../components/Layout";
 
 # Installation
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean imperdiet porttitor nibh quis facilisis. Vestibulum eu lacinia lorem. Pellentesque non enim in ipsum cursus dictum. Sed purus ex, mattis vitae turpis eu, ultricies vehicula velit. Quisque volutpat eget augue ut molestie. Aliquam a ornare ligula. Cras sodales nibh sit amet dolor egestas viverra. Vivamus magna dolor, sagittis vel risus ac, vestibulum blandit nulla. Suspendisse vitae nisi feugiat, finibus sem nec, blandit mi. Vestibulum quis turpis ut ligula bibendum ornare. Praesent consequat cursus velit id vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at scelerisque felis, vel tristique velit. Mauris at semper felis, id finibus felis. Suspendisse mollis faucibus tempor.
+
+To use DecaUI in your project, run one of the following commands in your terminal:
+
+```bash
+npm install @deca-ui/react
+```
+
+## Setup
+
+After installing Deca UI, you need to set up the DecaUIProvider at the root of your application. This can be either in your index.jsx, index.tsx or App.jsx depending on the framework you use.
+
+```jsx
+import * as React from 'react';
+
+// 1. import `DecaUIProvider` component
+import { DecaUIProvider } from '@deca-ui/react'
+
+function App({Component}) {
+  // 2. Wrap DecaUIProvider at the root of your app
+  return (
+    <DecaUIProvider>
+      <Component />
+    </DecaUIProvider>
+  )
+}
+```
+
+## Next.js
+
+If you are using [Next.js](https://nextjs.org/), you need customization file _document.js, please refer to [Next.js document here](https://nextjs.org/docs/advanced-features/custom-document/) to create file `_document.js`.
+
+Then we add the following code to the file:
+
+```jsx
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { getCssText } from "@deca-ui/react";
+
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+```
 
 export default ({ children }) => <Layout mdx>{children}</Layout>

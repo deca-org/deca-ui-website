@@ -1,8 +1,25 @@
 import type { AppProps } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
-import { DecaUIProvider } from "@deca-ui/react";
-import { Text } from "@deca-ui/react";
+import { DecaUIProvider, Box, styled, Text } from "@deca-ui/react";
 import slugify from "slugify";
+import CodeBlock from "../components/CodeBlock";
+
+const Link = styled("a", {
+  color: "$primary",
+  textDecoration: "none",
+  "&:hover": {
+    color: "$primary-darken-1",
+  },
+});
+
+const Code = styled("code", {
+  fontFamily: "$mono",
+  bg: "$secondary-lighten-6",
+  color: "$secondary",
+  br: "$xs",
+  fontSize: "$bodySm",
+  px: "$1",
+});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const MDXComponents = {
@@ -11,9 +28,15 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         as="h1"
         css={{
           mb: "$3",
+          wordWrap: "break-word",
         }}
         mono
         {...props}
+        size={{
+          "@n": "h4",
+          "@xs": "h3",
+          "@sm": "h1",
+        }}
       />
     ),
     h2: (props: any) => {
@@ -21,12 +44,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       return (
         <Text
           as="h2"
-          size="h4"
           mono
           id={id}
+          size={{
+            "@n": "h5",
+            "@sm": "h4",
+          }}
           css={{
+            wordWrap: "break-word",
             scrollMarginTop: "$sizes$22",
-            mt: "$3",
+            mt: "$4",
             mb: "$1",
           }}
           {...props}
@@ -37,11 +64,30 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Text
         as="p"
         css={{
-          color: "$gray600",
+          color: "$gray700",
+          py: "$1",
+          fontWeight: "$normal",
         }}
         {...props}
       />
     ),
+    a: (props: any) => <Link {...props} />,
+    code: (props: any) => <Code {...props} />,
+    pre: (props: any) => {
+      const codeBlock = props.children;
+      if (codeBlock.props.className === "language-bash") {
+        return (
+          <CodeBlock lang="bash" gutters={true} control>
+            {codeBlock.props.children}
+          </CodeBlock>
+        );
+      }
+      return (
+        <CodeBlock lang="jsx" gutters={true} control>
+          {codeBlock.props.children}
+        </CodeBlock>
+      );
+    },
   };
 
   return (
