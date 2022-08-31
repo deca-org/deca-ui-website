@@ -40,27 +40,25 @@ const Footer = () => {
               <Box>
                 <Text
                   as="h3"
+                  mono
                   size={{
                     "@n": "h5",
                     "@xs": "h4",
                     "@sm": "h3",
                   }}
-                  css={{
-                    fontFamily: "$mono",
-                  }}
                 >
                   Ship your next project faster
                 </Text>
                 <Text
-                  as="h6"
                   weight="normal"
                   css={{
                     color: "$gray700",
                     mt: "$2",
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-                  ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  sit amet lorem a justo dictum finibus sed non lectus. Nulla et
+                  velit justo. Integer vehicula scelerisque ligula.
                 </Text>
               </Box>
               <Box
@@ -230,9 +228,9 @@ const Footer = () => {
       >
         <img src="/headshot.png" alt="Headshot" />
         <Text
+          mono
           css={{
             color: "$gray700",
-            fontFamily: "$mono",
           }}
         >
           Made by Heril Saha

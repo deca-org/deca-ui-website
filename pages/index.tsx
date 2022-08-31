@@ -44,7 +44,7 @@ const Card = ({ icon, header, children }: GeneralProps) => (
     >
       {React.cloneElement(icon, { size: theme.sizes[7].value })}
     </Box>
-    <Text as="h5" css={{ fontFamily: "$mono" }}>
+    <Text as="h5" mono>
       {header}
     </Text>
     <Text
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
     gap: "$2",
   }}
 >
-  <Text as="h5" css={{ mb: "$2", fontFamily: "$mono" }}>
+  <Text as="h5" mono css={{ mb: "$2" }}>
     Get Started
   </Text>
   <Input variant="outlined" placeholder="Email Address" />
@@ -115,13 +115,11 @@ const Home: NextPage = () => {
               <Grid css={{ zIndex: 2 }}>
                 <Text
                   as="h1"
+                  mono
                   size={{
                     "@n": "h4",
                     "@xs": "h3",
                     "@sm": "h1",
-                  }}
-                  css={{
-                    fontFamily: "$mono",
                   }}
                 >
                   Make beautiful websites regardless of your design experience.
@@ -367,19 +365,16 @@ const Home: NextPage = () => {
                 <Grid>
                   <Text
                     as="h2"
+                    mono
                     size={{
                       "@n": "h5",
                       "@xs": "h4",
                       "@sm": "h2",
                     }}
-                    css={{
-                      fontFamily: "$mono",
-                    }}
                   >
                     Apply your own theming decisions.
                   </Text>
                   <Text
-                    as="h6"
                     weight="normal"
                     css={{
                       color: "$gray700",
@@ -436,13 +431,11 @@ const Home: NextPage = () => {
             >
               <Text
                 as="h2"
+                mono
                 size={{
                   "@n": "h5",
                   "@xs": "h4",
                   "@sm": "h2",
-                }}
-                css={{
-                  fontFamily: "$mono",
                 }}
                 center
               >
@@ -523,7 +516,7 @@ const Home: NextPage = () => {
                       maxWidth: "$36",
                     }}
                   >
-                    <Text as="h5" css={{ mb: "$2", fontFamily: "$mono" }}>
+                    <Text as="h5" mono css={{ mb: "$2" }}>
                       Get Started
                     </Text>
                     <Input

@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@deca-ui/react": "^1.4.8",
+    "@deca-ui/react": "^1.4.10",
     "@iconfu/svg-inject": "^1.2.3",
+    "@mdx-js/loader": "^2.1.3",
+    "@mdx-js/react": "^2.1.3",
+    "@next/mdx": "^12.2.5",
     "@types/react-syntax-highlighter": "^15.5.5",
     "next": "12.2.5",
     "polished": "^4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "@types/node": "18.7.11",
