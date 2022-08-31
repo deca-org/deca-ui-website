@@ -23,7 +23,7 @@ interface TOCProps {
   subHeaders: Array<SubHeader>;
 }
 
-const AllRoutes = {
+export const AllRoutes = {
   guide: ["Installation", "SSR", "Design Principles"],
   components: [
     "Badge",
@@ -36,12 +36,6 @@ const AllRoutes = {
     "Modal",
     "Popover",
     "Radio",
-    "Switch",
-    "Text",
-    "DecaUIProvider",
-    "Switch",
-    "Text",
-    "DecaUIProvider",
     "Switch",
     "Text",
     "DecaUIProvider",
@@ -207,19 +201,19 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
     >
       <Grid.Container css={{ overflow: "visible" }}>
         <Grid
-          sm={3}
+          md={3}
           css={{
             "@n": {
               display: "none",
             },
-            "@sm": {
+            "@md": {
               display: "block",
             },
           }}
         >
           <Sidebar currentPath={asPath} />
         </Grid>
-        <Grid n={12} sm={9} md={7}>
+        <Grid n={12} sm={10} md={7}>
           <Box
             css={{
               mt: "$3",
@@ -229,12 +223,12 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
           </Box>
         </Grid>
         <Grid
-          md={2}
+          sm={2}
           css={{
             "@n": {
               display: "none",
             },
-            "@md": {
+            "@sm": {
               display: "block",
             },
           }}
