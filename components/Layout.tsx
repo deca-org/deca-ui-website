@@ -20,7 +20,7 @@ const Layout = ({
     <Box css={{ position: "relative" }}>
       <Navbar blockPosition={mdx || blockPosition} whiteBg={mdx || whiteBg} />
       {mdx ? <MDXLayout>{children}</MDXLayout> : <Box>{children}</Box>}
-      <Footer />
+      {!mdx && <Footer />}
     </Box>
   );
 };

@@ -9,8 +9,18 @@ interface MDXLayoutProps {
   children?: React.ReactNode;
 }
 
-interface Sidebar {
+interface SidebarProps {
   currentPath?: string;
+}
+
+interface SubHeader {
+  text: string;
+  link: string;
+}
+
+interface TOCProps {
+  currentPath?: string;
+  subHeaders: Array<SubHeader>;
 }
 
 const AllRoutes = {
@@ -29,11 +39,30 @@ const AllRoutes = {
     "Switch",
     "Text",
     "DecaUIProvider",
+    "Switch",
+    "Text",
+    "DecaUIProvider",
+    "Switch",
+    "Text",
+    "DecaUIProvider",
+    "Switch",
+    "Text",
   ],
 };
 
-const Sidebar = ({ currentPath }: Sidebar) => (
-  <Box css={{ mt: "$3", display: "flex", flexDirection: "column", gap: "$4" }}>
+const Sidebar = ({ currentPath }: SidebarProps) => (
+  <Box
+    css={{
+      display: "flex",
+      flexDirection: "column",
+      gap: "$4",
+      position: "fixed",
+      mt: "$4",
+      pb: "$5",
+      height: "calc(100% - $sizes$19 - $space$4)",
+      overflow: "scroll",
+    }}
+  >
     {Object.entries(AllRoutes).map((category, idx) => {
       const categoryName = category[0];
       const categoryItems = category[1];
@@ -43,6 +72,8 @@ const Sidebar = ({ currentPath }: Sidebar) => (
             mono
             weight="semibold"
             css={{
+              pr: "$3",
+              pl: "$2",
               textTransform: "uppercase",
               letterSpacing: "$widest",
               color: "$primary",
@@ -53,13 +84,15 @@ const Sidebar = ({ currentPath }: Sidebar) => (
 
           {categoryItems.map((item, idx) => {
             const slug = `/docs/${categoryName}/${slugify(item)}`.toLowerCase();
-            const matchesSlug = currentPath === slug;
+            // remove header ids for root link match
+            const noHeaderIdPath = (currentPath as string).split("#")[0];
+            const matchesSlug = noHeaderIdPath === slug;
 
             return (
               <Box
                 key={`item-${idx}`}
                 css={{
-                  mt: "$2",
+                  mt: "$1",
                   display: "flex",
                   flexDirection: "column",
                   "& a": {
@@ -67,14 +100,17 @@ const Sidebar = ({ currentPath }: Sidebar) => (
                     py: "$1",
                     mr: "$5",
                     br: "$xs",
+                    width: "calc(100% - $3)",
                     fontWeight: matchesSlug ? "$medium" : "$normal",
                     transition: "$default",
                     color: matchesSlug ? "$secondary" : "$gray600",
                     bg: matchesSlug ? "$secondary-lighten-7" : "$transparent",
                     textDecoration: "none",
                     "&:hover": {
-                      color: matchesSlug ? "$secondary" : "$gray900",
-                      bg: matchesSlug ? "$secondary-lighten-7" : "$transparent",
+                      color: matchesSlug ? "$secondary" : "$primary",
+                      bg: matchesSlug
+                        ? "$secondary-lighten-7"
+                        : "$primary-lighten-7",
                     },
                   },
                 }}
@@ -88,6 +124,53 @@ const Sidebar = ({ currentPath }: Sidebar) => (
     })}
   </Box>
 );
+
+const TableOfContents = ({ subHeaders, currentPath }: TOCProps) => {
+  const headerIdPath = `#${(currentPath as string).split("#")[1]}`;
+  return (
+    <Box
+      css={{
+        position: "sticky",
+        pl: "$5",
+        display: "flex",
+        justifyContent: "flex-end",
+        top: "$6",
+      }}
+    >
+      <Box>
+        <Text
+          mono
+          weight="semibold"
+          css={{
+            textTransform: "uppercase",
+            letterSpacing: "$widest",
+            color: "$primary",
+          }}
+        >
+          Contents
+        </Text>
+        {subHeaders.map((subHeader: SubHeader) => {
+          const matchesId = headerIdPath === subHeader.link;
+          return (
+            <Box
+              key={`subheader-${subHeader.link}`}
+              css={{
+                mt: "$2",
+                "& a": {
+                  color: matchesId ? "$gray900" : "$gray600",
+                  textDecoration: "none",
+                  fontWeight: matchesId ? "$medium" : "$normal",
+                },
+              }}
+            >
+              <Link href={subHeader.link}>{subHeader.text}</Link>
+            </Box>
+          );
+        })}
+      </Box>
+    </Box>
+  );
+};
 
 const MDXLayout = ({ children }: MDXLayoutProps) => {
   const { asPath } = useRouter();
@@ -112,21 +195,51 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
     return [];
   };
 
-  const headings = getHeadings(contentString);
+  const subHeaders = getHeadings(contentString);
 
   return (
     <Container
       px="md"
       css={{
         mt: "$3",
+        overflow: "visible",
       }}
     >
-      <Grid.Container>
-        <Grid n={3}>
+      <Grid.Container css={{ overflow: "visible" }}>
+        <Grid
+          sm={3}
+          css={{
+            "@n": {
+              display: "none",
+            },
+            "@sm": {
+              display: "block",
+            },
+          }}
+        >
           <Sidebar currentPath={asPath} />
         </Grid>
-        <Grid n={9}>
-          <Box css={{ mt: "$2" }}>{children}</Box>
+        <Grid n={12} sm={9} md={7}>
+          <Box
+            css={{
+              mt: "$3",
+            }}
+          >
+            {children}
+          </Box>
+        </Grid>
+        <Grid
+          md={2}
+          css={{
+            "@n": {
+              display: "none",
+            },
+            "@md": {
+              display: "block",
+            },
+          }}
+        >
+          <TableOfContents subHeaders={subHeaders} currentPath={asPath} />
         </Grid>
       </Grid.Container>
     </Container>

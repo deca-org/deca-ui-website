@@ -6,10 +6,32 @@ import slugify from "slugify";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const MDXComponents = {
-    h1: (props: any) => <Text as="h1" mono {...props} />,
+    h1: (props: any) => (
+      <Text
+        as="h1"
+        css={{
+          mb: "$3",
+        }}
+        mono
+        {...props}
+      />
+    ),
     h2: (props: any) => {
       const id = slugify(props.children).toLowerCase();
-      return <Text as="h2" size="h5" mono id={id} {...props} />;
+      return (
+        <Text
+          as="h2"
+          size="h4"
+          mono
+          id={id}
+          css={{
+            scrollMarginTop: "$sizes$22",
+            mt: "$3",
+            mb: "$1",
+          }}
+          {...props}
+        />
+      );
     },
     p: (props: any) => (
       <Text

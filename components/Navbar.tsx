@@ -99,7 +99,7 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                   },
                 }}
               >
-                <Link href="/docs">Documentation</Link>
+                <Link href="/docs/guide/installation">Documentation</Link>
               </Text>
               <Text as="p" weight="medium" mono>
                 Products
