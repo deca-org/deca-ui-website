@@ -1,0 +1,51 @@
+
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Switch } from "@deca-ui/react"
+
+# Switch
+The Switch component is used as an alternative for the `Checkbox` component. You can switch between enabled or disabled states.
+
+## Import
+```
+import { Switch } from "@deca-ui/react"
+```
+
+## Usage
+<ComponentWrapper>
+  <Switch initialToggle label="Switch" />
+</ComponentWrapper>
+```
+<Switch initialToggle label="Switch" />
+```
+
+## Disabled
+Use the `disabled` prop to disable the Switch.
+<ComponentWrapper>
+  <Switch disabled label="Switch" />
+  <Switch initialToggle disabled label="Switch" />
+</ComponentWrapper>
+```
+<Switch disabled label="Switch" />
+<Switch initialToggle disabled label="Switch" />
+```
+
+## Colors
+Use the `color` prop to change the color of the Switch. You can set the value to `primary`, `secondary`, `success`, `warning` or `error`.
+<ComponentWrapper>
+  <Switch initialToggle color="primary" label="Primary" />
+  <Switch initialToggle color="secondary" label="Secondary" />
+  <Switch initialToggle color="success" label="Success" />
+  <Switch initialToggle color="warning" label="Warning" />
+  <Switch initialToggle color="error" label="Error" />
+</ComponentWrapper>
+
+```
+  <Switch initialToggle color="primary" label="Primary" />
+  <Switch initialToggle color="secondary" label="Secondary" />
+  <Switch initialToggle color="warning" label="Warning" />
+  <Switch initialToggle color="success" label="Success" />
+  <Switch initialToggle color="error" label="Error" />
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>
