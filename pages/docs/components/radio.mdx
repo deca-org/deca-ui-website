@@ -1,0 +1,71 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Radio } from "@deca-ui/react"
+
+# Radio
+Radios are used when only one choice may be selected in a series of options.
+
+## Import
+```
+import { Radio } from "@deca-ui/react"
+```
+
+## Usage
+<ComponentWrapper>
+  <Radio initialSelect label="Radio" />
+</ComponentWrapper>
+```
+<Radio initialSelect label="Radio" />
+```
+
+## Disabled
+Use the `disabled` prop to disable the Radio.
+<ComponentWrapper>
+  <Radio disabled label="Radio" />
+  <Radio initialSelect disabled label="Radio" />
+</ComponentWrapper>
+```
+<Radio disabled label="Radio" />
+<Radio initialSelect disabled label="Radio" />
+```
+
+## Colors
+Use the `color` prop to change the color of the Radio. You can set the value to `primary`, `secondary`, `success`, `warning` or `error`.
+<ComponentWrapper>
+  <Radio initialSelect color="primary" label="Primary" />
+  <Radio initialSelect color="secondary" label="Secondary" />
+  <Radio initialSelect color="success" label="Success" />
+  <Radio initialSelect color="warning" label="Warning" />
+  <Radio initialSelect color="error" label="Error" />
+</ComponentWrapper>
+
+```
+  <Radio initialSelect color="primary" label="Primary" />
+  <Radio initialSelect color="secondary" label="Secondary" />
+  <Radio initialSelect color="warning" label="Warning" />
+  <Radio initialSelect color="success" label="Success" />
+  <Radio initialSelect color="error" label="Error" />
+```
+
+## Radio Group
+
+<ComponentWrapper>
+  <Radio.Group defaultValue={["A", "C"]} css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}>
+    <Radio initialSelect value="A" label="Harry Potter" />
+    <Radio initialSelect value="B" label="The Great Gatsby" />
+    <Radio initialSelect value="C" label="The Hobbits" />
+  </Radio.Group>
+</ComponentWrapper>
+
+```
+  <Radio.Group
+    defaultValue={["A", "C"]}
+    css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}
+  >
+    <Radio value="A" label="Harry Potter" />
+    <Radio value="B" label="The Great Gatsby" />
+    <Radio initialSelect value="C" label="The Hobbits" />
+  </Radio.Group>
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>
