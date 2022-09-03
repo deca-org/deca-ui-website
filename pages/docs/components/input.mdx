@@ -1,0 +1,97 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Input } from "@deca-ui/react"
+
+# Input
+Input component is a component that is used to get user input in a text field.
+
+## Import
+```
+import { Input } from "@deca-ui/react"
+```
+
+## Usage
+<ComponentWrapper>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+</ComponentWrapper>
+
+```
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+```
+
+## Sizes
+Use the `size` prop to change the size of the Input. You can set the value to `sm`, `md`, or `lg`.
+<ComponentWrapper>
+  <Input size="sm" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+  <Input size="md" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+  <Input size="lg" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+</ComponentWrapper>
+```
+<Input size="sm" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+<Input size="md" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+<Input size="lg" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
+```
+
+## Varaints
+Use the `variant` prop to change the visual style of the Input. You can set the value to `solid` or `outlined`.
+<ComponentWrapper>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid"/>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined"/>
+</ComponentWrapper>
+
+```
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid"/>
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined"/>
+```
+
+## Focus Color
+Use the `focusColor` prop to change the color of the input when focused. Note that this prop only applies when the variant is `outlined`. You can set the value to `primary`, `secondary`, `success`, `warning` or `error`.
+<ComponentWrapper>
+  <Input label="Primary" variant="outlined" focusColor="primary" />
+  <Input label="Secondary" variant="outlined" focusColor="secondary" />
+  <Input label="Success" variant="outlined" focusColor="success" />
+  <Input label="Warning" variant="outlined" focusColor="warning" />
+  <Input label="Error" variant="outlined" focusColor="error" />
+</ComponentWrapper>
+```
+  <Input label="Primary" variant="outlined" focusColor="primary" />
+  <Input label="Secondary" variant="outlined" focusColor="secondary" />
+  <Input label="Success" variant="outlined" focusColor="success" />
+  <Input label="Warning" variant="outlined" focusColor="warning" />
+  <Input label="Error" variant="outlined" focusColor="error" />
+```
+
+## Varaints
+Use the `variant` prop to change the visual style of the Input. You can set the value to `solid` or `outlined`.
+<ComponentWrapper>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid"/>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined"/>
+</ComponentWrapper>
+
+```
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid"/>
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined"/>
+```
+
+## Pill
+Use the `pill` prop to have a completely rounded Input.
+<ComponentWrapper>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid" pill />
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined" pill />
+</ComponentWrapper>
+```
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid" pill />
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined" pill />
+```
+
+## Disabled
+Use the `disabled` prop to disable the Input.
+<ComponentWrapper>
+  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' disabled />
+</ComponentWrapper>
+```
+<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' disabled />
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>
+

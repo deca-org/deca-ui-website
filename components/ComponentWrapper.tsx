@@ -40,6 +40,7 @@ const ComponentWrapper = ({
           borderWidth: "$normal",
           borderColor: "$gray100",
           flexWrap: "wrap",
+          overflow: "auto",
         }}
       >
         {children}
