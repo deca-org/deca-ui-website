@@ -1,0 +1,71 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Checkbox } from "@deca-ui/react"
+
+# Checkbox
+Checkbox component is used in forms when a user needs to select multiple values from several options.
+
+## Import
+```
+import { Checkbox } from "@deca-ui/react"
+```
+
+## Usage
+<ComponentWrapper>
+  <Checkbox initialCheck label="Checkbox" />
+</ComponentWrapper>
+```
+<Checkbox initialCheck label="Checkbox" />
+```
+
+## Disabled
+Use the `disabled` prop to disable the Checkbox.
+<ComponentWrapper>
+  <Checkbox disabled label="Checkbox" />
+  <Checkbox initialCheck disabled label="Checkbox" />
+</ComponentWrapper>
+```
+<Checkbox disabled label="Checkbox" />
+<Checkbox initialCheck disabled label="Checkbox" />
+```
+
+## Colors
+Use the `color` prop to change the color of the Checkbox. You can set the value to `primary`, `secondary`, `success`, `warning` or `error`.
+<ComponentWrapper>
+  <Checkbox initialCheck color="primary" label="Primary" />
+  <Checkbox initialCheck color="secondary" label="Secondary" />
+  <Checkbox initialCheck color="warning" label="Warning" />
+  <Checkbox initialCheck color="success" label="Success" />
+  <Checkbox initialCheck color="error" label="Error" />
+</ComponentWrapper>
+
+```
+  <Checkbox initialCheck color="primary" label="Primary" />
+  <Checkbox initialCheck color="secondary" label="Secondary" />
+  <Checkbox initialCheck color="warning" label="Warning" />
+  <Checkbox initialCheck color="success" label="Success" />
+  <Checkbox initialCheck color="error" label="Error" />
+```
+
+## Checkbox Group
+
+<ComponentWrapper>
+  <Checkbox.Group defaultValue={["A", "C"]} css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}>
+    <Checkbox initialCheck value="A" label="Harry Potter" />
+    <Checkbox initialCheck value="B" label="The Great Gatsby" />
+    <Checkbox initialCheck value="C" label="The Hobbits" />
+  </Checkbox.Group>
+</ComponentWrapper>
+
+```
+  <Checkbox.Group
+    defaultValue={["A", "C"]}
+    css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}
+  >
+    <Checkbox initialCheck value="A" label="Harry Potter" />
+    <Checkbox initialCheck value="B" label="The Great Gatsby" />
+    <Checkbox initialCheck value="C" label="The Hobbits" />
+  </Checkbox.Group>
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>

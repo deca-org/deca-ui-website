@@ -1,16 +1,16 @@
 import React from "react";
 import { Box, DecaUIProvider, baseTheme } from "@deca-ui/react";
+import theme from "../components/theme";
 
 interface ComponentWrapperProps {
-  center?: boolean;
   children?: React.ReactNode;
 }
 
-const ComponentWrapper = ({
-  center = true,
-  children,
-}: ComponentWrapperProps) => (
-  <DecaUIProvider root={false} theme={baseTheme.theme}>
+const ComponentWrapper = ({ children }: ComponentWrapperProps) => (
+  <DecaUIProvider
+    root={false}
+    theme={{ ...baseTheme.theme, fonts: theme.fonts }}
+  >
     <Box
       css={{
         display: "flex",
@@ -22,6 +22,7 @@ const ComponentWrapper = ({
         borderStyle: "solid",
         borderWidth: "$normal",
         borderColor: "$gray100",
+        flexWrap: "wrap",
       }}
     >
       {children}

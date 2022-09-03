@@ -3,6 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { DecaUIProvider, Box, styled, Text } from "@deca-ui/react";
 import slugify from "slugify";
 import CodeBlock from "../components/CodeBlock";
+import theme from "../components/theme";
 
 const Link = styled("a", {
   color: "$primary",
@@ -88,17 +89,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   };
 
   return (
-    <DecaUIProvider
-      theme={{
-        fonts: { normal: "Roboto", mono: "JetBrains Mono" },
-        colors: {
-          bg: "#FBE8DE",
-        },
-        radii: {
-          sm: "15px",
-        },
-      }}
-    >
+    <DecaUIProvider theme={theme}>
       <MDXProvider components={MDXComponents}>
         <Component {...pageProps} />
       </MDXProvider>

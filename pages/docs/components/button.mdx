@@ -1,0 +1,95 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Button } from "@deca-ui/react"
+
+# Button
+Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
+
+## Import
+```
+import { Button } from "@deca-ui/react"
+```
+
+## Usage
+<ComponentWrapper>
+  <Button>Default</Button>
+</ComponentWrapper>
+
+```
+  <Button>Default</Button>
+```
+
+## Sizes
+Use the `size` prop to change the size of the Button. You can set the value to `sm`, `md`, or `lg`.
+<ComponentWrapper>
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+</ComponentWrapper>
+
+```
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+```
+
+## Variants
+Use the `variant` prop to change the visual style of the Button. You can set the value to `solid`, `outlined`, `flat`, or `ghost`.
+<ComponentWrapper>
+  <Button variant="solid">Solid</Button>
+  <Button variant="outlined">Outlined</Button>
+  <Button variant="flat">Flat</Button>
+  <Button variant="ghost">Ghost</Button>
+</ComponentWrapper>
+
+```
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+```
+
+## Colors
+Use the `color` prop to change the color of the Button. You can set the value to `primary`, `secondary`, `success`, `warning` or `error`.
+<ComponentWrapper>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="success">Success</Button>
+  <Button color="warning">Warning</Button>
+  <Button color="error">Error</Button>
+</ComponentWrapper>
+
+```
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="success">Success</Button>
+  <Button color="warning">Warning</Button>
+  <Button color="error">Error</Button>
+```
+## Pill
+Use the `pill` prop to have a completely rounded Button.
+<ComponentWrapper>
+  <Button color="primary" pill>Primary</Button>
+  <Button color="secondary" pill>Secondary</Button>
+  <Button color="success" pill>Success</Button>
+  <Button color="warning" pill>Warning</Button>
+  <Button color="error" pill>Error</Button>
+</ComponentWrapper>
+
+```
+  <Button color="primary" pill>Primary</Button>
+  <Button color="secondary" pill>Secondary</Button>
+  <Button color="success" pill>Success</Button>
+  <Button color="warning" pill>Warning</Button>
+  <Button color="error" pill>Error</Button>
+```
+
+## Disabled State
+Use the `disabled` prop to disable the Button.
+<ComponentWrapper>
+  <Button disabled>Default</Button>
+</ComponentWrapper>
+```
+  <Button disabled>Default</Button>
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>

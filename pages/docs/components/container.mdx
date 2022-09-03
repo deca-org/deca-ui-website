@@ -1,0 +1,76 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Text, Container } from "@deca-ui/react"
+
+# Container
+Containers are used to constrain a content's width to the current breakpoint, while keeping it fluid.
+
+## Import
+```
+import { Container } from "@deca-ui/react"
+```
+
+## Usage
+To contain any piece of content, wrap it in the Container component.
+<ComponentWrapper>
+  <Container
+    css={{
+      bg: "$primary",
+      color: '$white',
+      p: '$4',
+      br: '$md',
+    }}
+  >
+    <Text> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rhoncus ligula, eget porta enim aliquam nec. Suspendisse ultrices lorem lobortis feugiat tempor. </Text>
+  </Container>
+</ComponentWrapper>
+```
+  <Container
+    css={{
+      bg: "$primary",
+      color: '$white',
+      p: '$4',
+      br: '$md',
+    }}
+  >
+    <Text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed eleifend rhoncus ligula, eget porta enim aliquam nec.
+      Suspendisse ultrices lorem lobortis feugiat tempor.
+    </Text>
+  </Container>
+```
+
+## Fluid
+Use the `fluid` To have `maxWidth` be 100% at all times.
+<ComponentWrapper>
+  <Container
+    fluid
+    css={{
+      bg: "$secondary",
+      color: '$white',
+      p: '$4',
+      br: '$md',
+    }}
+  >
+    <Text> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend rhoncus ligula, eget porta enim aliquam nec. Suspendisse ultrices lorem lobortis feugiat tempor. </Text>
+  </Container>
+</ComponentWrapper>
+```
+  <Container
+    fluid
+    css={{
+      bg: "$secondary",
+      color: '$white',
+      p: '$4',
+      br: '$md',
+    }}
+  >
+    <Text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed eleifend rhoncus ligula, eget porta enim aliquam nec.
+      Suspendisse ultrices lorem lobortis feugiat tempor.
+    </Text>
+  </Container>
+```
+export default ({ children }) => <Layout mdx>{children}</Layout>
