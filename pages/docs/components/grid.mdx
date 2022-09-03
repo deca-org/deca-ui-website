@@ -1,0 +1,69 @@
+import Layout from "../../../components/Layout";
+import {Grid, Box} from "@deca-ui/react"
+import ComponentWrapper from "../../../components/ComponentWrapper"
+
+# Grid
+Grid component is used to create a responsive layout grid that adapts to screen size and orientation, ensuring consistency across layouts. The component is based on a 12-column grid layout.
+
+## Import
+```
+import { Grid } from "@deca-ui/react"
+```
+
+## Usage
+Using breakpoints on Grid.Container applies it to all Grid children components
+<ComponentWrapper noFlex>
+  <Grid.Container n={12} xs={6}><Grid><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 1</Box></Grid><Grid><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 2</Box></Grid></Grid.Container>
+</ComponentWrapper>
+```
+import {styled} from "@deca-ui/react"
+
+const MockItem = styled("div", {
+  bg: "$primary",
+  p: "$3",
+  color: "$white",
+  br: "$md"
+})
+
+<Grid.Container n={12} xs={6}>
+  <Grid>
+    <MockItem>Item 1</MockItem>
+  </Grid>
+  <Grid>
+    <MockItem>Item 2</MockItem>
+  </Grid>
+</Grid.Container>
+```
+
+## Grid Item
+Grid components can have individual breakpoints that override the given breakpoints of Grid.Container
+<ComponentWrapper noFlex>
+  <Grid.Container n={12}><Grid xs={4}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 1</Box></Grid><Grid xs={8}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 2</Box></Grid><Grid xs={8}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 3</Box></Grid><Grid xs={4}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 4</Box></Grid></Grid.Container>
+</ComponentWrapper>
+```
+import {styled} from "@deca-ui/react"
+
+const MockItem = styled("div", {
+  bg: "$primary",
+  p: "$3",
+  color: "$white",
+  br: "$md"
+})
+
+<Grid.Container n={12}>
+  <Grid>
+    <MockItem xs={4}>Item 1</MockItem>
+  </Grid>
+  <Grid>
+    <MockItem xs={8}>Item 2</MockItem>
+  </Grid>
+  <Grid>
+    <MockItem xs={8}>Item 3</MockItem>
+  </Grid>
+  <Grid>
+    <MockItem xs={4}>Item 4</MockItem>
+  </Grid>
+</Grid.Container>
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>
