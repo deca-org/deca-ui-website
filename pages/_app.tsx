@@ -46,15 +46,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           as="h2"
           mono
           id={id}
-          size={{
-            "@n": "h5",
-            "@sm": "h4",
-          }}
+          size="h5"
           css={{
             wordWrap: "break-word",
             scrollMarginTop: "$sizes$22",
             mt: "$4",
-            mb: "$1",
+            mb: "$2",
           }}
           {...props}
         />

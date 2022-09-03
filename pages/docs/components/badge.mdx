@@ -12,10 +12,58 @@ import { Badge } from "@deca-ui/react"
 
 ## Usage
 <ComponentWrapper>
-  <Badge>Hello</Badge>
-  <Badge>Hello</Badge>
-  <Badge>Hello</Badge>
+  <Badge>Default</Badge>
 </ComponentWrapper>
 
-export default ({ children }) => <Layout mdx>{children}</Layout>
+```
+  <Badge>Default</Badge>
+```
 
+## Sizes
+<ComponentWrapper>
+  <Badge size="sm">Small</Badge>
+  <Badge size="md">Medium</Badge>
+  <Badge size="lg">Large</Badge>
+</ComponentWrapper>
+
+```
+  <Badge size="sm">Small</Badge>
+  <Badge size="md">Medium</Badge>
+  <Badge size="lg">Large</Badge>
+```
+
+## Colors
+<ComponentWrapper>
+  <Badge color="primary">Primary</Badge>
+  <Badge color="secondary">Secondary</Badge>
+  <Badge color="success">Success</Badge>
+  <Badge color="warning">Warning</Badge>
+  <Badge color="error">Error</Badge>
+</ComponentWrapper>
+
+```
+  <Badge color="primary">Primary</Badge>
+  <Badge color="secondary">Secondary</Badge>
+  <Badge color="success">Success</Badge>
+  <Badge color="warning">Warning</Badge>
+  <Badge color="error">Error</Badge>
+```
+## Pill
+<ComponentWrapper>
+  <Badge color="primary" pill>Primary</Badge>
+  <Badge color="secondary" pill>Secondary</Badge>
+  <Badge color="success" pill>Success</Badge>
+  <Badge color="warning" pill>Warning</Badge>
+  <Badge color="error" pill>Error</Badge>
+</ComponentWrapper>
+
+```
+  <Badge color="primary" pill>Primary</Badge>
+  <Badge color="secondary" pill>Secondary</Badge>
+  <Badge color="success" pill>Success</Badge>
+  <Badge color="warning" pill>Warning</Badge>
+  <Badge color="error" pill>Error</Badge>
+```
+
+
+export default ({ children }) => <Layout mdx>{children}</Layout>

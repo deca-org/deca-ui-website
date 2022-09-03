@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import slugify from "slugify";
 import { Container, Text, Box, Grid } from "@deca-ui/react";
 import { useRouter } from "next/router";
@@ -19,7 +19,6 @@ interface SubHeader {
 }
 
 interface TOCProps {
-  currentPath?: string;
   subHeaders: Array<SubHeader>;
 }
 
@@ -117,8 +116,8 @@ const Sidebar = ({ currentPath }: SidebarProps) => (
   </Box>
 );
 
-const TableOfContents = ({ subHeaders, currentPath }: TOCProps) => {
-  const headerIdPath = `#${(currentPath as string).split("#")[1]}`;
+const TableOfContents = ({ subHeaders }: TOCProps) => {
+  const [active, setActive] = useState("");
   return (
     <Box
       css={{
@@ -142,20 +141,25 @@ const TableOfContents = ({ subHeaders, currentPath }: TOCProps) => {
           Contents
         </Text>
         {subHeaders.map((subHeader: SubHeader) => {
-          const matchesId = headerIdPath === subHeader.link;
+          const isActive = active === subHeader.link;
           return (
             <Box
               key={`subheader-${subHeader.link}`}
               css={{
                 mt: "$2",
                 "& a": {
-                  color: matchesId ? "$gray900" : "$gray600",
+                  color: isActive ? "$gray900" : "$gray600",
                   textDecoration: "none",
-                  fontWeight: matchesId ? "$medium" : "$normal",
+                  fontWeight: isActive ? "$medium" : "$normal",
                 },
               }}
             >
-              <Link href={subHeader.link}>{subHeader.text}</Link>
+              <a
+                href={subHeader.link}
+                onClick={() => setActive(subHeader.link)}
+              >
+                {subHeader.text}
+              </a>
             </Box>
           );
         })}
@@ -166,6 +170,7 @@ const TableOfContents = ({ subHeaders, currentPath }: TOCProps) => {
 
 const MDXLayout = ({ children }: MDXLayoutProps) => {
   const { asPath } = useRouter();
+
   const contentString = renderToString(children as React.ReactElement);
 
   const getHeadings = (source: string) => {
@@ -230,7 +235,7 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
             },
           }}
         >
-          <TableOfContents subHeaders={subHeaders} currentPath={asPath} />
+          <TableOfContents subHeaders={subHeaders} />
         </Grid>
       </Grid.Container>
     </Container>

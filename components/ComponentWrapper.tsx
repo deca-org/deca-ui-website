@@ -14,13 +14,14 @@ const ComponentWrapper = ({
     <Box
       css={{
         display: "flex",
-        justifyContent: center ? "center" : "flex-start",
+        justifyContent: "flex-start",
+        alignItems: "flex-end",
+        gap: "$3",
         p: "$3",
         br: "$md",
         borderStyle: "solid",
         borderWidth: "$normal",
         borderColor: "$gray100",
-        gap: "$3",
       }}
     >
       {children}
