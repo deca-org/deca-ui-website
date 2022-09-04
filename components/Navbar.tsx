@@ -5,6 +5,7 @@ import { GitHub, Heart, Twitter, Menu } from "react-feather";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { AllRoutes } from "./MDXLayout";
+import Image from "next/image";
 
 interface NavbarProps {
   blockPosition?: boolean;
@@ -231,9 +232,10 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                     cursor: "pointer",
                   }}
                 >
-                  <img
+                  <Image
                     src="/icon.svg"
                     alt="Deca UI"
+                    layout="fixed"
                     width="35px"
                     height="35px"
                   />
