@@ -233,6 +233,7 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                   }}
                 >
                   <Image
+                    priority
                     src="/icon.svg"
                     alt="Deca UI"
                     layout="fixed"
