@@ -275,6 +275,7 @@ const Home: NextPage = () => {
                       {[1, 2, 3, 4, 5, 6].map((i) => (
                         <Text
                           as={`h${i}` as TextAs}
+                          key={i}
                           css={{
                             m: "$n",
                             lineHeight: "$2",
