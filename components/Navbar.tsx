@@ -119,6 +119,9 @@ const MobileMenu = ({
             variant="flat"
             color="success"
             icon={<GitHub />}
+            css={{
+              dflex: "center",
+            }}
             onClick={() =>
               window.open("https://github.com/deca-org/deca-ui", "_blank")
             }
@@ -128,6 +131,9 @@ const MobileMenu = ({
           <Button
             variant="flat"
             icon={<Twitter />}
+            css={{
+              dflex: "center",
+            }}
             onClick={() => window.open("https://twitter.com/deca_ui", "_blank")}
           >
             Twitter
@@ -136,6 +142,9 @@ const MobileMenu = ({
             variant="flat"
             icon={<Heart />}
             color="secondary"
+            css={{
+              dflex: "center",
+            }}
             onClick={() =>
               window.open("https://opencollective.com/deca-ui", "_blank")
             }
