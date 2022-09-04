@@ -38,6 +38,49 @@ const MobileMenu = ({
     <Container px="md">
       <Box
         css={{
+          display: "flex",
+          justifyContent: "flex-start",
+          flexDirection: "row",
+          alignItems: "flex-start",
+          gap: "$3",
+        }}
+      >
+        <Button
+          size="lg"
+          variant="flat"
+          color="success"
+          icon={<GitHub />}
+          css={{
+            dflex: "center",
+          }}
+          onClick={() =>
+            window.open("https://github.com/deca-org/deca-ui", "_blank")
+          }
+        />
+        <Button
+          size="lg"
+          variant="flat"
+          icon={<Twitter />}
+          css={{
+            dflex: "center",
+          }}
+          onClick={() => window.open("https://twitter.com/deca_ui", "_blank")}
+        />
+        <Button
+          size="lg"
+          variant="flat"
+          icon={<Heart />}
+          color="secondary"
+          css={{
+            dflex: "center",
+          }}
+          onClick={() =>
+            window.open("https://opencollective.com/deca-ui", "_blank")
+          }
+        />
+      </Box>
+      <Box
+        css={{
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -108,50 +151,6 @@ const MobileMenu = ({
             </Box>
           );
         })}
-        <Box
-          css={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "$2",
-          }}
-        >
-          <Button
-            variant="flat"
-            color="success"
-            icon={<GitHub />}
-            css={{
-              dflex: "center",
-            }}
-            onClick={() =>
-              window.open("https://github.com/deca-org/deca-ui", "_blank")
-            }
-          >
-            Github
-          </Button>
-          <Button
-            variant="flat"
-            icon={<Twitter />}
-            css={{
-              dflex: "center",
-            }}
-            onClick={() => window.open("https://twitter.com/deca_ui", "_blank")}
-          >
-            Twitter
-          </Button>
-          <Button
-            variant="flat"
-            icon={<Heart />}
-            color="secondary"
-            css={{
-              dflex: "center",
-            }}
-            onClick={() =>
-              window.open("https://opencollective.com/deca-ui", "_blank")
-            }
-          >
-            Sponsor
-          </Button>
-        </Box>
       </Box>
     </Container>
   </Box>
