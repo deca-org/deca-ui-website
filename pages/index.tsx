@@ -125,7 +125,7 @@ const Home: NextPage = () => {
                     "@sm": "h1",
                   }}
                 >
-                  Make beautiful websites regardless of your design experience.
+                  Build stunning websites in a small amount of time.
                 </Text>
                 <Text
                   as="h6"
@@ -136,8 +136,8 @@ const Home: NextPage = () => {
                     pr: "$3",
                   }}
                 >
-                  DUI offers a comprehensive suite of UI tools to help you ship
-                  new features faster. Start with deca-ui today.
+                  Deca UI allows users to create websites with ease as they have
+                  access to a large suite of React components.
                 </Text>
                 <Box
                   css={{
