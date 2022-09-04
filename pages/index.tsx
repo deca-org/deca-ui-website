@@ -136,7 +136,7 @@ const Home: NextPage = () => {
                     pr: "$3",
                   }}
                 >
-                  Deca UI allows users to create websites with ease as they have
+                  DecaUI allows users to create websites with ease as they have
                   access to a large suite of React components.
                 </Text>
                 <Box
@@ -346,26 +346,26 @@ const Home: NextPage = () => {
                 <Grid.Container n={12} sm={6} lg={3} spacing="md">
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Themable" icon={<Edit />}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Lorem ipsum dolor sit amet.
+                      Easy to customize the look and feel of your website by
+                      editing the theme
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Accessible" icon={<Command />}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Lorem ipsum dolor sit amet.
+                      All of DecaUI's components are built with accessibility in
+                      mind so everyone can enjoy your site.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Stitches" icon={<LayoutIcon />}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Lorem ipsum dolor sit amet.
+                      Built with StitchesJS which provides world class developer
+                      experience
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Dark Mode" icon={<Moon />}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Lorem ipsum dolor sit amet.
+                      DecaUI's built in dark mode option allows your site to
+                      feel sleek and modern
                     </Card>
                   </Grid>
                 </Grid.Container>
@@ -381,7 +381,7 @@ const Home: NextPage = () => {
                       "@sm": "h2",
                     }}
                   >
-                    Apply your own theming decisions.
+                    Customize your application with ease.
                   </Text>
                   <Text
                     weight="normal"
@@ -392,10 +392,17 @@ const Home: NextPage = () => {
                   >
                     DecaUI creates multiple shades of the colors you provide in
                     order to automatically create hover and focus states. In
-                    addition to colours, you can customize fonts, spacing
-                    values, shadows, and everything you need.
+                    addition to colors, you can customize fonts, spacing,
+                    shadows, and everything you need.
                   </Text>
-                  <Button variant="flat" size="sm" css={{ mt: "$4" }}>
+                  <Button
+                    variant="flat"
+                    size="sm"
+                    css={{ mt: "$4" }}
+                    onClick={() =>
+                      router.push("/docs/components/decauiprovider")
+                    }
+                  >
                     Learn more
                   </Button>
                 </Grid>
@@ -438,7 +445,7 @@ const Home: NextPage = () => {
                 }}
                 center
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Creating your own design language has never been easier.
               </Text>
             </Box>
             <Grid.Container

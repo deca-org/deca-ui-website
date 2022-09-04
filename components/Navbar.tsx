@@ -117,6 +117,7 @@ const MobileMenu = ({
         >
           <Button
             variant="flat"
+            color="success"
             icon={<GitHub />}
             css={{
               width: "100%",

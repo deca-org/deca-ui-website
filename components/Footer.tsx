@@ -18,7 +18,8 @@ const Footer = () => {
       <Container
         px="md"
         css={{
-          py: "calc($5 + $4)" as any,
+          pt: "calc($5 + $4)" as any,
+          pb: "calc($5 + $1)" as any,
         }}
       >
         <Grid.Container
@@ -50,7 +51,7 @@ const Footer = () => {
                     "@sm": "h3",
                   }}
                 >
-                  Ship your next project faster
+                  Make a beautiful site with ease.
                 </Text>
                 <Text
                   weight="normal"
@@ -59,9 +60,9 @@ const Footer = () => {
                     mt: "$2",
                   }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  sit amet lorem a justo dictum finibus sed non lectus. Nulla et
-                  velit justo. Integer vehicula scelerisque ligula.
+                  Get started today using our intuitive and unique component
+                  library to create your site and share with us what you've
+                  built!
                 </Text>
               </Box>
               <Box
@@ -232,7 +233,7 @@ const Footer = () => {
         css={{
           dflex: "center",
           flexDirection: "column",
-          pb: "$3",
+          pb: "$4",
           "& img": {
             size: "$15",
             br: "$pill",
