@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, Button, Popover, theme, CSS } from "@deca-ui/react";
 import { Prism as SyntaxHighligher } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -22,22 +22,6 @@ const CodeBlock = ({
   control = false,
   ...props
 }: CodeBlockProps) => {
-  const [sm, setSm] = useState(false);
-
-  useEffect(() => {
-    const resizer = () => {
-      if (window.innerWidth < 650) {
-        setSm(true);
-      } else {
-        setSm(false);
-      }
-    };
-    window.addEventListener("resize", resizer);
-    return () => {
-      window.removeEventListener("resize", resizer);
-    };
-  }, []);
-
   return (
     <Box
       css={{
@@ -63,8 +47,18 @@ const CodeBlock = ({
           <Popover placement="top" offset={4}>
             <Popover.Trigger>
               <Button
-                variant={sm ? "solid" : "ghost"}
-                color={sm ? "primary" : "secondary"}
+                variant={
+                  {
+                    "@n": "solid",
+                    "@xs": "ghost",
+                  } as any
+                }
+                color={
+                  {
+                    "@n": "primary",
+                    "@xs": "secondary",
+                  } as any
+                }
                 size="sm"
                 icon={<Copy />}
                 css={{ br: "$xs" }}
