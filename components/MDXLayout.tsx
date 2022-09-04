@@ -223,6 +223,31 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
           >
             {children}
           </Box>
+          <Box
+            css={{
+              mt: "$4",
+              mb: "$3",
+              dflex: "center",
+              flexDirection: "column",
+              pb: "$3",
+              "& img": {
+                size: "$11",
+                br: "$pill",
+                mb: "$2",
+              },
+            }}
+          >
+            <img src="/headshot.png" alt="Headshot" />
+            <Text
+              size="caption"
+              mono
+              css={{
+                color: "$gray700",
+              }}
+            >
+              Made by Heril Saha
+            </Text>
+          </Box>
         </Grid>
         <Grid
           sm={2}

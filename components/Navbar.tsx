@@ -174,27 +174,35 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
             alignItems="center"
             justifyContent="center"
           >
-            <Grid
-              n={6}
-              md={3}
-              lg={2}
-              css={{
-                display: "flex",
-                justifyContent: "flex-start",
-                alignItems: "center",
-              }}
-            >
-              <img src="/icon.svg" alt="Deca UI" width="35px" height="35px" />
-              <Text
-                as="h6"
-                weight="bold"
-                mono
-                css={{
-                  ml: "$2",
-                }}
-              >
-                DecaUI
-              </Text>
+            <Grid n={6} md={3} lg={2}>
+              <Link href="/">
+                <Box
+                  css={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    width: "$25",
+                    cursor: "pointer",
+                  }}
+                >
+                  <img
+                    src="/icon.svg"
+                    alt="Deca UI"
+                    width="35px"
+                    height="35px"
+                  />
+                  <Text
+                    as="h6"
+                    weight="bold"
+                    mono
+                    css={{
+                      ml: "$2",
+                    }}
+                  >
+                    DecaUI
+                  </Text>
+                </Box>
+              </Link>
             </Grid>
             <Grid
               css={{
