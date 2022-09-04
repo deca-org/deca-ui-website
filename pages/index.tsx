@@ -352,8 +352,8 @@ const Home: NextPage = () => {
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Accessible" icon={<Command />}>
-                      All of DecaUI's components are built with accessibility in
-                      mind so everyone can enjoy your site.
+                      All of DecaUI&apos;s components are built with
+                      accessibility in mind so everyone can enjoy your site.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
@@ -364,8 +364,8 @@ const Home: NextPage = () => {
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Dark Mode" icon={<Moon />}>
-                      DecaUI's built in dark mode option allows your site to
-                      feel sleek and modern
+                      DecaUI&apos;s built in dark mode option allows your site
+                      to feel sleek and modern
                     </Card>
                   </Grid>
                 </Grid.Container>

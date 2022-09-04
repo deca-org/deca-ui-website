@@ -61,7 +61,7 @@ const Footer = () => {
                   }}
                 >
                   Get started today using our intuitive and unique component
-                  library to create your site and share with us what you've
+                  library to create your site and share with us what you&apos;ve
                   built!
                 </Text>
               </Box>
