@@ -30,8 +30,44 @@ export const ModalShowcase = () => {
   );
 };
 
+# Modal
+The Modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.
+
+## Import
+```
+import { Modal } from "@deca-ui/react"
+```
+
+## Usage
+The Modal component can only be used as a controlled component.
 <ComponentWrapper>
   <ModalShowcase />
 </ComponentWrapper>
+```
+// State for modal component
+const [open, setOpen] = React.useState(false);
+
+// JSX
+<Box>
+  <Button onClick={() => setOpen(true)}>Open Modal</Button>
+  <Modal closeButton open={open} setOpen={setOpen}>
+    <Modal.Header>
+      <Text as="p" size="h6" center>
+        Welcome to <b>DecaUI</b>
+      </Text>
+    </Modal.Header>
+    <Modal.Body>
+      <Input variant="outlined" placeholder="Email Address" size="lg" pill />
+      <Input variant="outlined" placeholder="Password" size="lg" pill />
+    </Modal.Body>
+    <Modal.Footer>
+      <Button variant="flat" color="error" onClick={() => setOpen(false)} pill>
+        Close
+      </Button>
+      <Button pill>Sign Up</Button>
+    </Modal.Footer>
+  </Modal>
+</Box>
+```
 
 export default ({ children }) => <Layout mdx>{children}</Layout>
