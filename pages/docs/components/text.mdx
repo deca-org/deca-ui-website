@@ -1,0 +1,54 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Text, Box } from "@deca-ui/react"
+
+# Text
+Text is the used to render text and paragraphs within an interface.
+
+## Import
+```
+import { Text } from "@deca-ui/react"
+```
+
+## Usage
+<ComponentWrapper column>
+  <Text as="h1">(H1) DecaUI is awesome</Text>
+  <Text as="h2">(H2) DecaUI is awesome</Text>
+  <Text as="h3">(H3) DecaUI is awesome</Text>
+  <Text as="h4">(H4) DecaUI is awesome</Text>
+  <Text as="h5">(H5) DecaUI is awesome</Text>
+  <Text as="h6">(H6) DecaUI is awesome</Text>
+  <Text as="p">(p) DecaUI is awesome</Text>
+</ComponentWrapper>
+
+```
+<Text as="h1">(H1) DecaUI is awesome</Text>
+<Text as="h2">(H2) DecaUI is awesome</Text>
+<Text as="h3">(H3) DecaUI is awesome</Text>
+<Text as="h4">(H4) DecaUI is awesome</Text>
+<Text as="h5">(H5) DecaUI is awesome</Text>
+<Text as="h6">(H6) DecaUI is awesome</Text>
+<Text as="p">(p) DecaUI is awesome</Text>
+```
+
+## Sizes
+It is possible to have a `p` tag with the size and line-height of a `h1` tag by using the `size` prop.
+<ComponentWrapper column>
+  <Text as="p" size="h1">This renders as a {"<p>"} tag</Text>
+</ComponentWrapper>
+
+```
+<Text as="p" size="h1">This renders as a {"<p>"} tag</Text>
+```
+
+## Font Weight
+You can change the font weight of the tag by using the `weight` prop.
+<ComponentWrapper column>
+  <Text as="p" weight="bold">This renders as bold text</Text>
+</ComponentWrapper>
+
+```
+<Text as="p" weight="bold">This renders as bold text</Text>
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>
