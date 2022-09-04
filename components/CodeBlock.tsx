@@ -44,7 +44,7 @@ const CodeBlock = ({
             top: "$2",
           }}
         >
-          <Popover placement="top" offset={4}>
+          <Popover placement="left" offset={4}>
             <Popover.Trigger>
               <Button
                 variant={
@@ -72,7 +72,7 @@ const CodeBlock = ({
                 m: "$n",
                 p: "$1",
                 px: "$3",
-                bg: "$gray900",
+                bg: "$gray800",
                 color: "$white",
                 fontSize: "$bodySm",
               }}
