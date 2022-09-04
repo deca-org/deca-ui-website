@@ -107,6 +107,51 @@ const MobileMenu = ({
             </Box>
           );
         })}
+        <Box
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "$2",
+          }}
+        >
+          <Button
+            variant="flat"
+            icon={<GitHub />}
+            css={{
+              width: "100%",
+              "@xs": {
+                width: "$35",
+              },
+            }}
+          >
+            Github
+          </Button>
+          <Button
+            variant="flat"
+            icon={<Twitter />}
+            css={{
+              width: "100%",
+              "@xs": {
+                width: "$35",
+              },
+            }}
+          >
+            Twitter
+          </Button>
+          <Button
+            variant="flat"
+            icon={<Heart />}
+            color="secondary"
+            css={{
+              width: "100%",
+              "@xs": {
+                width: "$35",
+              },
+            }}
+          >
+            Sponsor
+          </Button>
+        </Box>
       </Box>
     </Container>
   </Box>
@@ -146,6 +191,7 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
   }, [mobileOpen]);
 
   const { asPath } = useRouter();
+
   return (
     <Box
       css={{
@@ -235,11 +281,41 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
               >
                 <Link href="/docs/guide/installation">Documentation</Link>
               </Text>
-              <Text as="p" weight="medium" mono>
-                Products
+              <Text
+                as="p"
+                weight="medium"
+                mono
+                css={{
+                  "& a": {
+                    transition: "$default",
+                    color: "$text",
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "$primary",
+                    },
+                  },
+                }}
+              >
+                <Link href="/docs/components/badge">Components</Link>
               </Text>
-              <Text as="p" weight="medium" mono>
-                About Us
+              <Text
+                as="p"
+                weight="medium"
+                mono
+                css={{
+                  "& a": {
+                    transition: "$default",
+                    color: "$text",
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "$primary",
+                    },
+                  },
+                }}
+              >
+                <Link href="https://github.com/deca-org/deca-ui/discussions/new">
+                  Feedback
+                </Link>
               </Text>
             </Grid>
             <Grid
@@ -257,9 +333,29 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                 },
               }}
             >
-              <Button variant="ghost" icon={<GitHub />} />
-              <Button variant="ghost" icon={<Twitter />} />
-              <Button color="secondary" variant="flat" icon={<Heart />}>
+              <Button
+                variant="ghost"
+                icon={<GitHub />}
+                onClick={() =>
+                  window.open("https://github.com/deca-org/deca-ui", "_blank")
+                }
+              />
+              <Button
+                variant="ghost"
+                icon={<Twitter />}
+                onClick={() =>
+                  window.open("https://twitter.com/deca_ui", "_blank")
+                }
+              />
+
+              <Button
+                color="secondary"
+                variant="flat"
+                icon={<Heart />}
+                onClick={() =>
+                  window.open("https://opencollective.com/deca-ui", "_blank")
+                }
+              >
                 Sponsor
               </Button>
             </Grid>

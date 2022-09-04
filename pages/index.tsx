@@ -14,6 +14,7 @@ import {
   Popover,
   TextAs,
 } from "@deca-ui/react";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import CodeBlock from "../components/CodeBlock";
 import { Copy, Moon, Layout as LayoutIcon, Command, Edit } from "react-feather";
@@ -89,6 +90,9 @@ const Home: NextPage = () => {
   <Button css={{ mt: "$2" }}>Create Account</Button>
 </Box>
 `;
+
+  const router = useRouter();
+
   return (
     <Layout>
       <Box css={{ overflow: "hidden" }}>
@@ -148,7 +152,12 @@ const Home: NextPage = () => {
                     },
                   }}
                 >
-                  <Button size="lg">Get Started</Button>
+                  <Button
+                    size="lg"
+                    onClick={() => router.push("/docs/guide/installation")}
+                  >
+                    Get Started
+                  </Button>
                   <Box
                     css={{
                       borderStyle: "solid",

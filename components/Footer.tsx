@@ -7,9 +7,12 @@ import {
   Button,
   Popover,
 } from "@deca-ui/react";
+import { useRouter } from "next/router";
 import { Copy, GitHub, Twitter } from "react-feather";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
     <Box>
       <Container
@@ -74,7 +77,12 @@ const Footer = () => {
                   },
                 }}
               >
-                <Button size="lg" color="secondary" variant="flat">
+                <Button
+                  size="lg"
+                  color="secondary"
+                  variant="flat"
+                  onClick={() => router.push("/docs/guide/installation")}
+                >
                   Get Started
                 </Button>
                 <Box
@@ -178,6 +186,9 @@ const Footer = () => {
                     height: "100%",
                   },
                 }}
+                onClick={() =>
+                  window.open("https://github.com/deca-org/deca-ui", "_blank")
+                }
               >
                 <Box>
                   <GitHub size={theme.sizes[7].value} />
@@ -204,6 +215,9 @@ const Footer = () => {
                     height: "100%",
                   },
                 }}
+                onClick={() =>
+                  window.open("https://twitter.com/deca_ui", "_blank")
+                }
               >
                 <Box>
                   <Twitter size={theme.sizes[7].value} />
