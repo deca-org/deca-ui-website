@@ -1,0 +1,37 @@
+import React from "react"
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Box, Button, Modal, Input, Text } from "@deca-ui/react"
+
+export const ModalShowcase = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Box>
+      <Button onClick={() => setOpen(true)}>Open Modal</Button>
+      <Modal closeButton open={open} setOpen={setOpen}>
+        <Modal.Header>
+          <Text as="p" size="h6" center>
+            Welcome to <b>DecaUI</b>
+          </Text>
+        </Modal.Header>
+        <Modal.Body>
+          <Input variant="outlined" placeholder="Email Address" size="lg" pill />
+          <Input variant="outlined" placeholder="Password" size="lg" pill />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="flat" color="error" onClick={() => setOpen(false)} pill>
+            Close
+          </Button>
+          <Button pill>Sign Up</Button>
+        </Modal.Footer>
+      </Modal>
+    </Box>
+  );
+};
+
+<ComponentWrapper>
+  <ModalShowcase />
+</ComponentWrapper>
+
+export default ({ children }) => <Layout mdx>{children}</Layout>

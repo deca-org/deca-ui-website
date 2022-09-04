@@ -151,7 +151,7 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
       css={{
         height: blockPosition ? "$sizes$19" : "$n",
         overflow: "hidden",
-        zIndex: "$max",
+        zIndex: "$10",
       }}
     >
       <Box
@@ -163,7 +163,7 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
           bg: whiteBg ? "$white" : scrollPosition > 0 ? "$white" : "$bg",
           width: "100%",
           height: "$19",
-          zIndex: "$max",
+          zIndex: "$10",
           boxShadow: scrollPosition > 0 ? "$default" : "none",
           transition: "$default",
         }}
