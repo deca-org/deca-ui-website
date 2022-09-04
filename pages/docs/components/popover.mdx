@@ -1,0 +1,32 @@
+import Layout from "../../../components/Layout";
+import ComponentWrapper from "../../../components/ComponentWrapper"
+import { Button, Popover } from "@deca-ui/react"
+
+# Popover
+Popover is a non-modal dialog that floats around a trigger.
+
+## Import
+```
+import { Popover } from "@deca-ui/react"
+```
+
+## Usage
+Note: The Popover.Trigger component only accepts one child component and automatically passes `onClick` to it.
+<ComponentWrapper>
+  <Popover>
+    <Popover.Trigger>
+      <Button>Open Popover</Button>
+    </Popover.Trigger>
+    <Popover.Content>This is the content of the popover.</Popover.Content>
+  </Popover>
+</ComponentWrapper>
+```
+<Popover>
+  <Popover.Trigger>
+    <Button>Open Popover</Button>
+  </Popover.Trigger>
+  <Popover.Content>This is the content of the popover.</Popover.Content>
+</Popover>
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>
