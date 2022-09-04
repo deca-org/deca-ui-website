@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Button, Popover, theme, CSS } from "@deca-ui/react";
 import { Prism as SyntaxHighligher } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { Copy } from "react-feather";
+import { Copy, ArrowDown } from "react-feather";
 
 interface CodeBlockProps {
   children: string;
@@ -11,7 +11,17 @@ interface CodeBlockProps {
   lg?: boolean;
   gutters?: boolean;
   control?: boolean;
+  limit?: boolean;
 }
+
+const limiter = (text: string) => {
+  const textArr = text.split("\n");
+  const limitedText = [];
+  for (let i = 0; i < 30; i++) {
+    limitedText.push(textArr[i]);
+  }
+  return limitedText.join("\n");
+};
 
 const CodeBlock = ({
   children,
@@ -20,8 +30,11 @@ const CodeBlock = ({
   lg = false,
   gutters = false,
   control = false,
+  limit = false,
   ...props
 }: CodeBlockProps) => {
+  const [showMore, setShowMore] = useState(!limit);
+
   return (
     <Box
       css={{
@@ -36,6 +49,25 @@ const CodeBlock = ({
       }}
       {...props}
     >
+      {!showMore && (
+        <Box
+          css={{
+            position: "absolute",
+            bottom: "$3",
+            left: "calc($3 + $1)",
+          }}
+        >
+          <Button
+            variant="flat"
+            color="secondary"
+            size="sm"
+            iconRight={<ArrowDown />}
+            onClick={() => setShowMore(true)}
+          >
+            Show More
+          </Button>
+        </Box>
+      )}
       {control && (
         <Box
           css={{
@@ -88,6 +120,11 @@ const CodeBlock = ({
         customStyle={{
           borderRadius: "15px",
           padding: lg ? theme.space[4].value : theme.space[3].value,
+          paddingBottom: showMore
+            ? lg
+              ? theme.space[4].value
+              : theme.space[3].value
+            : theme.space[5].value,
           fontSize: lg
             ? theme.fontSizes.body.value
             : theme.fontSizes.bodySm.value,
@@ -96,7 +133,7 @@ const CodeBlock = ({
           margin: 0,
         }}
       >
-        {children}
+        {showMore ? children : limiter(children)}
       </SyntaxHighligher>
     </Box>
   );

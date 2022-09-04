@@ -80,6 +80,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           </CodeBlock>
         );
       }
+      if (codeBlock.props.className === "language-limit") {
+        return (
+          <CodeBlock lang="jsx" gutters={true} control limit>
+            {codeBlock.props.children}
+          </CodeBlock>
+        );
+      }
       return (
         <CodeBlock lang="jsx" gutters={true} control>
           {codeBlock.props.children}
