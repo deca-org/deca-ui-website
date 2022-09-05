@@ -63,6 +63,7 @@ const CodeBlock = ({
             size="sm"
             iconRight={<ArrowDown />}
             onClick={() => setShowMore(true)}
+            css={{ width: "$25" }}
           >
             Show More
           </Button>
