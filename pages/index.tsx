@@ -345,7 +345,7 @@ const Home: NextPage = () => {
               <Box css={{ pb: "$6" }}>
                 <Grid.Container n={12} sm={6} lg={3} spacing="md">
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
-                    <Card header="Themable" icon={<Edit />}>
+                    <Card header="Themeable" icon={<Edit />}>
                       Easy to customize the look and feel of your website by
                       editing the theme
                     </Card>
