@@ -347,7 +347,7 @@ const Home: NextPage = () => {
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Themeable" icon={<Edit />}>
                       Easy to customize the look and feel of your website by
-                      editing the theme
+                      editing the theme.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
@@ -359,13 +359,13 @@ const Home: NextPage = () => {
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Stitches" icon={<LayoutIcon />}>
                       Built with StitchesJS which provides world class developer
-                      experience
+                      experience.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
                     <Card header="Dark Mode" icon={<Moon />}>
                       DecaUI&apos;s built in dark mode option allows your site
-                      to feel sleek and modern
+                      to feel sleek and modern.
                     </Card>
                   </Grid>
                 </Grid.Container>
