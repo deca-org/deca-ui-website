@@ -20,7 +20,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
-    "react-svg": "^15.1.12",
     "react-syntax-highlighter": "^15.5.0",
     "slugify": "^1.6.5"
   },

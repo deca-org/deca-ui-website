@@ -1,11 +1,10 @@
 import slugify from "slugify";
 import Link from "next/link";
 import { Box, Grid, Text, Container, Button, theme } from "@deca-ui/react";
-import { GitHub, Heart, Twitter, Menu } from "react-feather";
+import { Heart, Twitter, Menu } from "react-feather";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { AllRoutes } from "./MDXLayout";
-import { ReactSVG } from "react-svg";
 import Image from "next/image";
 
 interface NavbarProps {
@@ -18,6 +17,22 @@ interface MobileMenuProps {
   whiteBg?: boolean;
   scrollPosition: number;
 }
+
+const NPMIcon = () => (
+  <svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#prefix__clip0_3_5)">
+      <path
+        d="M9.914 0H0v20h9.913V5.044h5.043V20H20V0H9.914z"
+        fill="currentColor"
+      />
+    </g>
+    <defs>
+      <clipPath id="prefix__clip0_3_5">
+        <path fill="#fff" d="M0 0h20v20H0z" />
+      </clipPath>
+    </defs>
+  </svg>
+);
 
 const MobileMenu = ({
   currentPath,
@@ -50,16 +65,9 @@ const MobileMenu = ({
           size="lg"
           variant="flat"
           color="warning"
-          icon={<ReactSVG src="/npm.svg" />}
+          icon={<NPMIcon />}
           css={{
             dflex: "center",
-            "& path": {
-              fill: "currentColor",
-            },
-            "& svg": {
-              width: "20px",
-              marginTop: "$1",
-            },
           }}
           onClick={() =>
             window.open(
@@ -347,16 +355,9 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
             >
               <Button
                 variant="ghost"
-                icon={<ReactSVG src="/npm.svg" />}
+                icon={<NPMIcon />}
                 css={{
                   dflex: "center",
-                  "& path": {
-                    fill: "currentColor",
-                  },
-                  "& svg": {
-                    width: "20px",
-                    marginTop: "$1",
-                  },
                 }}
                 onClick={() =>
                   window.open(
