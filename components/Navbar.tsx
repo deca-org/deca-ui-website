@@ -389,6 +389,13 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                 onClick={() =>
                   window.open("https://opencollective.com/deca-ui", "_blank")
                 }
+                css={{
+                  flexShrink: 1,
+                  "& svg": {
+                    size: "$4",
+                    mr: "$1",
+                  },
+                }}
               >
                 Sponsor
               </Button>
