@@ -5,6 +5,7 @@ import { GitHub, Heart, Twitter, Menu } from "react-feather";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { AllRoutes } from "./MDXLayout";
+import { ReactSVG } from "react-svg";
 import Image from "next/image";
 
 interface NavbarProps {
@@ -48,13 +49,23 @@ const MobileMenu = ({
         <Button
           size="lg"
           variant="flat"
-          color="success"
-          icon={<GitHub />}
+          color="warning"
+          icon={<ReactSVG src="/npm.svg" />}
           css={{
             dflex: "center",
+            "& path": {
+              fill: "currentColor",
+            },
+            "& svg": {
+              width: "20px",
+              marginTop: "$1",
+            },
           }}
           onClick={() =>
-            window.open("https://github.com/deca-org/deca-ui", "_blank")
+            window.open(
+              "https://www.npmjs.com/package/@deca-ui/react",
+              "_blank"
+            )
           }
         />
         <Button
@@ -336,9 +347,22 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
             >
               <Button
                 variant="ghost"
-                icon={<GitHub />}
+                icon={<ReactSVG src="/npm.svg" />}
+                css={{
+                  dflex: "center",
+                  "& path": {
+                    fill: "currentColor",
+                  },
+                  "& svg": {
+                    width: "20px",
+                    marginTop: "$1",
+                  },
+                }}
                 onClick={() =>
-                  window.open("https://github.com/deca-org/deca-ui", "_blank")
+                  window.open(
+                    "https://www.npmjs.com/package/@deca-ui/react",
+                    "_blank"
+                  )
                 }
               />
               <Button
