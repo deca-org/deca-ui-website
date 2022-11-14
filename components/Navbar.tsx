@@ -69,7 +69,8 @@ const MobileMenu = ({
           css={{
             dflex: "center",
             "& svg": {
-              marginLeft: "$0",
+              size: "auto",
+              dflex: "center",
             },
           }}
           onClick={() =>
@@ -362,7 +363,8 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                 css={{
                   dflex: "center",
                   "& svg": {
-                    marginLeft: "$0",
+                    size: "auto",
+                    dflex: "center",
                   },
                 }}
                 onClick={() =>
