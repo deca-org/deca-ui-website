@@ -68,6 +68,9 @@ const MobileMenu = ({
           icon={<NPMIcon />}
           css={{
             dflex: "center",
+            "& svg": {
+              marginLeft: "$0",
+            },
           }}
           onClick={() =>
             window.open(
@@ -358,6 +361,9 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                 icon={<NPMIcon />}
                 css={{
                   dflex: "center",
+                  "& svg": {
+                    marginLeft: "$0",
+                  },
                 }}
                 onClick={() =>
                   window.open(
