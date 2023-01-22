@@ -25,20 +25,20 @@ To contain any piece of content, wrap it in the Container component.
   </Container>
 </ComponentWrapper>
 ```
-  <Container
-    css={{
-      bg: "$primary",
-      color: '$white',
-      p: '$4',
-      br: '$md',
-    }}
-  >
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed eleifend rhoncus ligula, eget porta enim aliquam nec.
-      Suspendisse ultrices lorem lobortis feugiat tempor.
-    </Text>
-  </Container>
+<Container
+  css={{
+    bg: "$primary",
+    color: '$white',
+    p: '$4',
+    br: '$md',
+  }}
+>
+  <Text>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Sed eleifend rhoncus ligula, eget porta enim aliquam nec.
+    Suspendisse ultrices lorem lobortis feugiat tempor.
+  </Text>
+</Container>
 ```
 
 ## Fluid
@@ -57,20 +57,20 @@ Use the `fluid` To have `maxWidth` be 100% at all times.
   </Container>
 </ComponentWrapper>
 ```
-  <Container
-    fluid
-    css={{
-      bg: "$secondary",
-      color: '$white',
-      p: '$4',
-      br: '$md',
-    }}
-  >
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Sed eleifend rhoncus ligula, eget porta enim aliquam nec.
-      Suspendisse ultrices lorem lobortis feugiat tempor.
-    </Text>
-  </Container>
+<Container
+  fluid
+  css={{
+    bg: "$secondary",
+    color: '$white',
+    p: '$4',
+    br: '$md',
+  }}
+>
+  <Text>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Sed eleifend rhoncus ligula, eget porta enim aliquam nec.
+    Suspendisse ultrices lorem lobortis feugiat tempor.
+  </Text>
+</Container>
 ```
 export default ({ children }) => <Layout mdx>{children}</Layout>
