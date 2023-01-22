@@ -38,9 +38,9 @@ Use the `size` prop to change the size of the Radio. You can set the value to `s
 </ComponentWrapper>
 
 ```
-  <Radio size="sm">Small</Radio>
-  <Radio size="md">Medium</Radio>
-  <Radio size="lg">Large</Radio>
+<Radio size="sm">Small</Radio>
+<Radio size="md">Medium</Radio>
+<Radio size="lg">Large</Radio>
 ```
 
 ## Colors
@@ -54,11 +54,11 @@ Use the `color` prop to change the color of the Radio. You can set the value to 
 </ComponentWrapper>
 
 ```
-  <Radio initialSelect color="primary" label="Primary" />
-  <Radio initialSelect color="secondary" label="Secondary" />
-  <Radio initialSelect color="warning" label="Warning" />
-  <Radio initialSelect color="success" label="Success" />
-  <Radio initialSelect color="error" label="Error" />
+<Radio initialSelect color="primary" label="Primary" />
+<Radio initialSelect color="secondary" label="Secondary" />
+<Radio initialSelect color="warning" label="Warning" />
+<Radio initialSelect color="success" label="Success" />
+<Radio initialSelect color="error" label="Error" />
 ```
 
 ## Radio Group
@@ -72,14 +72,14 @@ Use the `color` prop to change the color of the Radio. You can set the value to 
 </ComponentWrapper>
 
 ```
-  <Radio.Group
-    defaultValue={["A", "C"]}
-    css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}
-  >
-    <Radio value="A" label="Harry Potter" />
-    <Radio value="B" label="The Great Gatsby" />
-    <Radio initialSelect value="C" label="The Hobbits" />
-  </Radio.Group>
+<Radio.Group
+  defaultValue={["A", "C"]}
+  css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}
+>
+  <Radio value="A" label="Harry Potter" />
+  <Radio value="B" label="The Great Gatsby" />
+  <Radio initialSelect value="C" label="The Hobbits" />
+</Radio.Group>
 ```
 
 export default ({ children }) => <Layout mdx>{children}</Layout>
