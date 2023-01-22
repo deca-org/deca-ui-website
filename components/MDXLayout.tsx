@@ -23,7 +23,7 @@ interface TOCProps {
 }
 
 export const AllRoutes = {
-  guide: ["Installation", "SSR"],
+  guide: ["Installation", "Next.js"],
   components: [
     "Badge",
     "Box",

@@ -1,0 +1,46 @@
+import Layout from "../../../components/Layout";
+
+# Next.js
+
+To use DecaUI with [Next.js](https://nextjs.org/), please follow the instructions below
+
+## Next 13
+With the introduction of Next.js 13, your components are defaulted to React Server Components within the new `app/` directory folder structure. To use DecaUI in those components, you need to convert them into client-side components by adding `'use client';` at the top of your file. **DecaUI only works with client-side components.**
+
+## Next 12 and lower
+
+If you are using Next.js 12 or lower, there is no need to add the `use client;` directive.
+
+## SRR Setup
+To use Next.js with DecaUI, you need to first have a `_document.js` file, please refer to [Next.js document here](https://nextjs.org/docs/advanced-features/custom-document/) to create a `_document.js` file.
+
+Then we add the following code to the file:
+
+```jsx
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { getCssText } from "@deca-ui/react";
+
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+```
+
+export default ({ children }) => <Layout mdx>{children}</Layout>

@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
-import { DecaUIProvider, Box, styled, Text } from "@deca-ui/react";
+import { DecaUIProvider, styled, Text } from "@deca-ui/react";
 import slugify from "slugify";
 import CodeBlock from "../components/CodeBlock";
 import theme from "../components/theme";
