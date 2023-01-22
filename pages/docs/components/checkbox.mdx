@@ -38,9 +38,9 @@ Use the `size` prop to change the size of the Checkbox. You can set the value to
 </ComponentWrapper>
 
 ```
-  <Checkbox size="sm">Small</Checkbox>
-  <Checkbox size="md">Medium</Checkbox>
-  <Checkbox size="lg">Large</Checkbox>
+<Checkbox size="sm">Small</Checkbox>
+<Checkbox size="md">Medium</Checkbox>
+<Checkbox size="lg">Large</Checkbox>
 ```
 
 ## Colors
@@ -54,11 +54,11 @@ Use the `color` prop to change the color of the Checkbox. You can set the value 
 </ComponentWrapper>
 
 ```
-  <Checkbox initialCheck color="primary" label="Primary" />
-  <Checkbox initialCheck color="secondary" label="Secondary" />
-  <Checkbox initialCheck color="warning" label="Warning" />
-  <Checkbox initialCheck color="success" label="Success" />
-  <Checkbox initialCheck color="error" label="Error" />
+<Checkbox initialCheck color="primary" label="Primary" />
+<Checkbox initialCheck color="secondary" label="Secondary" />
+<Checkbox initialCheck color="warning" label="Warning" />
+<Checkbox initialCheck color="success" label="Success" />
+<Checkbox initialCheck color="error" label="Error" />
 ```
 
 ## Checkbox Group
@@ -72,14 +72,14 @@ Use the `color` prop to change the color of the Checkbox. You can set the value 
 </ComponentWrapper>
 
 ```
-  <Checkbox.Group
-    defaultValue={["A", "C"]}
-    css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}
-  >
-    <Checkbox initialCheck value="A" label="Harry Potter" />
-    <Checkbox initialCheck value="B" label="The Great Gatsby" />
-    <Checkbox initialCheck value="C" label="The Hobbits" />
-  </Checkbox.Group>
+<Checkbox.Group
+  defaultValue={["A", "C"]}
+  css={{ flexDirection: "row", gap: "$3", flexWrap: "wrap" }}
+>
+  <Checkbox initialCheck value="A" label="Harry Potter" />
+  <Checkbox initialCheck value="B" label="The Great Gatsby" />
+  <Checkbox initialCheck value="C" label="The Hobbits" />
+</Checkbox.Group>
 ```
 
 export default ({ children }) => <Layout mdx>{children}</Layout>
