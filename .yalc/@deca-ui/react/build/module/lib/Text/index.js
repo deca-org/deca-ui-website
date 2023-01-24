@@ -1,5 +1,0 @@
-import Text from './Text';
-export * from './Text';
-export { Text };
-export default Text;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvbGliL1RleHQvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxJQUFJLE1BQU0sUUFBUSxDQUFDO0FBQzFCLGNBQWMsUUFBUSxDQUFDO0FBQ3ZCLE9BQU8sRUFBRSxJQUFJLEVBQUUsQ0FBQztBQUNoQixlQUFlLElBQUksQ0FBQyJ9

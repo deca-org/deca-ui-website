@@ -30,6 +30,22 @@ import { DecaUIProvider } from "@deca-ui/react"
 </DecaUIProvider>
 ```
 
+## Enabling Dark Mode
+To allow components to render in dark mode, set the `mode` to `"dark"`
+```
+<DecaUIProvider mode="dark">
+  ...
+</DecaUIProvider>
+```
+
+## Root Prop
+The `root` prop is enabled by default and should be disabled if used anywhere else besides the top level of your application. Typically, you would have a provider with `root={false}` when having some sort of sub-theme within your application.
+```
+<DecaUIProvider root={false}>
+  ...
+</DecaUIProvider>
+```
+
 ## Base Theme
 ```limit
 colors: {
@@ -380,8 +396,5 @@ breakpoints: {
   xl: '1920px',
 },
 ```
-
-## Note
-The `root` prop is enabled by default and should be disabled if used anywhere else besides the top level of your application.
 
 export default ({ children }) => <Layout mdx>{children}</Layout>

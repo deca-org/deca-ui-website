@@ -1,5 +1,0 @@
-import RadioGroup from './RadioGroup';
-export * from './RadioGroup';
-export { RadioGroup };
-export default RadioGroup;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9zcmMvbGliL1JhZGlvL1JhZGlvR3JvdXAvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxVQUFVLE1BQU0sY0FBYyxDQUFDO0FBQ3RDLGNBQWMsY0FBYyxDQUFDO0FBQzdCLE9BQU8sRUFBRSxVQUFVLEVBQUUsQ0FBQztBQUN0QixlQUFlLFVBQVUsQ0FBQyJ9

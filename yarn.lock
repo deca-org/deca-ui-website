@@ -94,9 +94,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@deca-ui/react@file:.yalc/@deca-ui/react":
-  "resolved" "file:.yalc/@deca-ui/react"
-  "version" "1.5.1"
+"@deca-ui/react@^1.5.2":
+  "integrity" "sha512-Jg5Cx/3Ukuw8UiR0bfU4d62RfknQSm/a+SNmgA5Pp9oZuGFBZObd5ATsBlE6IiApAIjriDEHgJsHftB1vtyW5g=="
+  "resolved" "https://registry.npmjs.org/@deca-ui/react/-/react-1.5.2.tgz"
+  "version" "1.5.2"
   dependencies:
     "@floating-ui/react-dom" "^1.0.0"
     "@floating-ui/react-dom-interactions" "^0.9.1"

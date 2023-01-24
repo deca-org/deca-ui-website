@@ -39,150 +39,156 @@ const MobileMenu = ({
   currentPath,
   defaultBg,
   scrollPosition,
-}: MobileMenuProps) => (
-  <Box
-    css={{
-      zIndex: "$max",
-      width: "100%",
-      position: "fixed",
-      top: "$sizes$19",
-      bg: defaultBg
-        ? "$bgSecondary"
-        : scrollPosition > 0
-        ? "$bgSecondary"
-        : "$bgPrimary",
-      overflow: "auto",
-      height: "calc(100% - 64px)",
-      pb: "$4",
-    }}
-  >
-    <Container px="md">
-      <Box
-        css={{
-          display: "flex",
-          justifyContent: "flex-start",
-          flexDirection: "row",
-          alignItems: "flex-start",
-          gap: "$3",
-        }}
-      >
-        <Button
-          size="lg"
-          variant="flat"
-          color="warning"
-          icon={<NPMIcon />}
+}: MobileMenuProps) => {
+  const { darkMode } = useContext(ThemeContext);
+
+  return (
+    <Box
+      css={{
+        zIndex: "$max",
+        width: "100%",
+        position: "fixed",
+        top: "$sizes$19",
+        bg: defaultBg
+          ? darkMode
+            ? "$bgPrimary"
+            : "$bgSecondary"
+          : scrollPosition > 0
+          ? "$bgSecondary"
+          : "$bgPrimary",
+        overflow: "auto",
+        height: "calc(100% - 64px)",
+        pb: "$4",
+      }}
+    >
+      <Container px="md">
+        <Box
           css={{
-            dflex: "center",
-            "& svg": {
-              size: "auto",
+            display: "flex",
+            justifyContent: "flex-start",
+            flexDirection: "row",
+            alignItems: "flex-start",
+            gap: "$3",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="flat"
+            color="warning"
+            icon={<NPMIcon />}
+            css={{
               dflex: "center",
-            },
-          }}
-          onClick={() =>
-            window.open(
-              "https://www.npmjs.com/package/@deca-ui/react",
-              "_blank"
-            )
-          }
-        />
-        <Button
-          size="lg"
-          variant="flat"
-          icon={<Twitter />}
+              "& svg": {
+                size: "auto",
+                dflex: "center",
+              },
+            }}
+            onClick={() =>
+              window.open(
+                "https://www.npmjs.com/package/@deca-ui/react",
+                "_blank"
+              )
+            }
+          />
+          <Button
+            size="lg"
+            variant="flat"
+            icon={<Twitter />}
+            css={{
+              dflex: "center",
+            }}
+            onClick={() => window.open("https://twitter.com/deca_ui", "_blank")}
+          />
+          <Button
+            size="lg"
+            variant="flat"
+            icon={<Heart />}
+            color="secondary"
+            css={{
+              dflex: "center",
+            }}
+            onClick={() =>
+              window.open("https://opencollective.com/deca-ui", "_blank")
+            }
+          />
+        </Box>
+        <Box
           css={{
-            dflex: "center",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: "$4",
+            py: "$3",
           }}
-          onClick={() => window.open("https://twitter.com/deca_ui", "_blank")}
-        />
-        <Button
-          size="lg"
-          variant="flat"
-          icon={<Heart />}
-          color="secondary"
-          css={{
-            dflex: "center",
-          }}
-          onClick={() =>
-            window.open("https://opencollective.com/deca-ui", "_blank")
-          }
-        />
-      </Box>
-      <Box
-        css={{
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          gap: "$4",
-          py: "$3",
-        }}
-      >
-        {Object.entries(AllRoutes).map((category, idx) => {
-          const categoryName = category[0];
-          const categoryItems = category[1];
-          return (
-            <Box key={`category-${idx}`}>
-              <Text
-                mono
-                weight="semibold"
-                css={{
-                  pr: "$3",
-                  pl: "$2",
-                  textTransform: "uppercase",
-                  letterSpacing: "$widest",
-                  color: "$primary",
-                }}
-              >
-                {categoryName}
-              </Text>
+        >
+          {Object.entries(AllRoutes).map((category, idx) => {
+            const categoryName = category[0];
+            const categoryItems = category[1];
+            return (
+              <Box key={`category-${idx}`}>
+                <Text
+                  mono
+                  weight="semibold"
+                  css={{
+                    pr: "$3",
+                    pl: "$2",
+                    textTransform: "uppercase",
+                    letterSpacing: "$widest",
+                    color: "$primary",
+                  }}
+                >
+                  {categoryName}
+                </Text>
 
-              {categoryItems.map((item, idx) => {
-                const slug = `/docs/${categoryName}/${slugify(
-                  item
-                )}`.toLowerCase();
-                // remove header ids for root link match
-                const noHeaderIdPath = (currentPath as string).split("#")[0];
-                const matchesSlug = noHeaderIdPath === slug;
+                {categoryItems.map((item, idx) => {
+                  const slug = `/docs/${categoryName}/${slugify(
+                    item
+                  )}`.toLowerCase();
+                  // remove header ids for root link match
+                  const noHeaderIdPath = (currentPath as string).split("#")[0];
+                  const matchesSlug = noHeaderIdPath === slug;
 
-                return (
-                  <Box
-                    key={`item-${idx}`}
-                    css={{
-                      mt: "$1",
-                      display: "flex",
-                      flexDirection: "column",
-                      "& a": {
-                        pl: "$2",
-                        py: "$1",
-                        mr: "$5",
-                        br: "$xs",
-                        width: "calc(100% - $3)",
-                        fontWeight: matchesSlug ? "$medium" : "$normal",
-                        transition: "$default",
-                        color: matchesSlug ? "$secondary" : "$gray600",
-                        bg: matchesSlug
-                          ? "$secondary-lighten-7"
-                          : "$transparent",
-                        textDecoration: "none",
-                        "&:hover": {
-                          color: matchesSlug ? "$secondary" : "$primary",
+                  return (
+                    <Box
+                      key={`item-${idx}`}
+                      css={{
+                        mt: "$1",
+                        display: "flex",
+                        flexDirection: "column",
+                        "& a": {
+                          pl: "$2",
+                          py: "$1",
+                          mr: "$5",
+                          br: "$xs",
+                          width: "calc(100% - $3)",
+                          fontWeight: matchesSlug ? "$medium" : "$normal",
+                          transition: "$default",
+                          color: matchesSlug ? "$secondary" : "$gray600",
                           bg: matchesSlug
                             ? "$secondary-lighten-7"
-                            : "$primary-lighten-7",
+                            : "$transparent",
+                          textDecoration: "none",
+                          "&:hover": {
+                            color: matchesSlug ? "$secondary" : "$primary",
+                            bg: matchesSlug
+                              ? "$secondary-lighten-7"
+                              : "$primary-lighten-7",
+                          },
                         },
-                      },
-                    }}
-                  >
-                    <Link href={slug}>{item}</Link>
-                  </Box>
-                );
-              })}
-            </Box>
-          );
-        })}
-      </Box>
-    </Container>
-  </Box>
-);
+                      }}
+                    >
+                      <Link href={slug}>{item}</Link>
+                    </Box>
+                  );
+                })}
+              </Box>
+            );
+          })}
+        </Box>
+      </Container>
+    </Box>
+  );
+};
 
 const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
   const [scrollPosition, setScrollPositon] = useState(0);
@@ -431,6 +437,12 @@ const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
                 },
               }}
             >
+              <Button
+                variant="ghost"
+                icon={darkMode ? <Sun /> : <Moon />}
+                onClick={switchMode}
+                css={{ mr: "$2" }}
+              />
               <Button
                 variant="flat"
                 icon={<Menu />}

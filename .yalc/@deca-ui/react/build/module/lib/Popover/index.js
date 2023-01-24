@@ -1,9 +1,0 @@
-import Popover from './Popover';
-import PopoverContent from './PopoverContent';
-import PopoverTrigger from './PopoverTrigger';
-Popover.Trigger = PopoverTrigger;
-Popover.Content = PopoverContent;
-export * from './Popover';
-export { Popover };
-export default Popover;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvbGliL1BvcG92ZXIvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxPQUFPLE1BQU0sV0FBVyxDQUFDO0FBQ2hDLE9BQU8sY0FBYyxNQUFNLGtCQUFrQixDQUFDO0FBQzlDLE9BQU8sY0FBYyxNQUFNLGtCQUFrQixDQUFDO0FBRTlDLE9BQU8sQ0FBQyxPQUFPLEdBQUcsY0FBYyxDQUFDO0FBQ2pDLE9BQU8sQ0FBQyxPQUFPLEdBQUcsY0FBYyxDQUFDO0FBRWpDLGNBQWMsV0FBVyxDQUFDO0FBQzFCLE9BQU8sRUFBRSxPQUFPLEVBQUUsQ0FBQztBQUNuQixlQUFlLE9BQU8sQ0FBQyJ9
