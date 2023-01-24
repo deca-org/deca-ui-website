@@ -14,7 +14,11 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <Box>
+    <Box
+      css={{
+        bg: "$bgSecondary",
+      }}
+    >
       <Container
         px="md"
         css={{
@@ -56,7 +60,7 @@ const Footer = () => {
                 <Text
                   weight="normal"
                   css={{
-                    color: "$gray700",
+                    color: "$body",
                     mt: "$2",
                   }}
                 >
@@ -90,8 +94,8 @@ const Footer = () => {
                   css={{
                     borderStyle: "solid",
                     borderWidth: "$normal",
-                    borderColor: "$gray800",
-                    color: "$gray800",
+                    borderColor: "$body",
+                    color: "$body",
                     br: "$sm",
                     height: "$10",
                     whiteSpace: "nowrap",
@@ -141,6 +145,8 @@ const Footer = () => {
                           m: "$n",
                           p: "$1",
                           px: "$3",
+                          bg: "$bgSecondary",
+                          color: "$body",
                         }}
                       >
                         Copied
@@ -173,7 +179,7 @@ const Footer = () => {
                   borderStyle: "solid",
                   borderWidth: "$normal",
                   borderColor: "$secondary",
-                  bg: "$white",
+                  bg: "$bgSecondary",
                   br: "$sm",
                   dflex: "center",
                   p: "$4",
@@ -202,7 +208,7 @@ const Footer = () => {
                   borderStyle: "solid",
                   borderWidth: "$normal",
                   borderColor: "$primary",
-                  bg: "$white",
+                  bg: "$bgSecondary",
                   br: "$sm",
                   dflex: "center",
                   p: "$4",
@@ -245,7 +251,7 @@ const Footer = () => {
         <Text
           mono
           css={{
-            color: "$gray700",
+            color: "$body",
           }}
         >
           Made by Heril Saha

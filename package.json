@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@deca-ui/react": "^1.4.10",
+    "@deca-ui/react": "file:.yalc/@deca-ui/react",
     "@iconfu/svg-inject": "^1.2.3",
     "@mdx-js/loader": "^2.1.3",
     "@mdx-js/react": "^2.1.3",
@@ -21,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
     "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^3.0.1",
     "slugify": "^1.6.5"
   },
   "devDependencies": {

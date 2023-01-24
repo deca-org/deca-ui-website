@@ -1,6 +1,6 @@
 import Layout from "../../../components/Layout";
 import ComponentWrapper from "../../../components/ComponentWrapper"
-import { Input } from "@deca-ui/react"
+import { DecaUIProvider, Input } from "@deca-ui/react"
 
 # Input
 Input component is a component that is used to get user input in a text field.
@@ -30,18 +30,6 @@ Use the `size` prop to change the size of the Input. You can set the value to `s
 <Input size="sm" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
 <Input size="md" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
 <Input size="lg" label="Email Address" placeholder='e.g. johndoe@gmail.com'/>
-```
-
-## Varaints
-Use the `variant` prop to change the visual style of the Input. You can set the value to `solid` or `outlined`.
-<ComponentWrapper>
-  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid"/>
-  <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined"/>
-</ComponentWrapper>
-
-```
-<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="solid"/>
-<Input label="Email Address" placeholder='e.g. johndoe@gmail.com' variant="outlined"/>
 ```
 
 ## Focus Color
@@ -92,6 +80,5 @@ Use the `disabled` prop to disable the Input.
 ```
 <Input label="Email Address" placeholder='e.g. johndoe@gmail.com' disabled />
 ```
-
 export default ({ children }) => <Layout mdx>{children}</Layout>
 

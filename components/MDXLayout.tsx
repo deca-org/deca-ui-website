@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import slugify from "slugify";
-import { Container, Text, Box, Grid } from "@deca-ui/react";
+import {
+  DecaUIProvider,
+  Container,
+  Text,
+  Box,
+  Grid,
+  Checkbox,
+} from "@deca-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { renderToString } from "react-dom/server";
+import { darkTheme } from "./theme";
 
 interface MDXLayoutProps {
   children?: React.ReactNode;
+  darkMode: boolean;
 }
 
 interface SidebarProps {
@@ -20,6 +29,7 @@ interface SubHeader {
 
 interface TOCProps {
   subHeaders: Array<SubHeader>;
+  darkMode: boolean;
 }
 
 export const AllRoutes = {
@@ -116,7 +126,7 @@ const Sidebar = ({ currentPath }: SidebarProps) => (
   </Box>
 );
 
-const TableOfContents = ({ subHeaders }: TOCProps) => {
+const TableOfContents = ({ subHeaders, darkMode }: TOCProps) => {
   const [active, setActive] = useState("");
   return (
     <Box
@@ -148,7 +158,11 @@ const TableOfContents = ({ subHeaders }: TOCProps) => {
               css={{
                 mt: "$2",
                 "& a": {
-                  color: isActive ? "$gray900" : "$gray600",
+                  color: isActive
+                    ? darkMode
+                      ? "$gray100"
+                      : "$gray900"
+                    : "$gray600",
                   textDecoration: "none",
                   fontWeight: isActive ? "$medium" : "$normal",
                 },
@@ -168,7 +182,7 @@ const TableOfContents = ({ subHeaders }: TOCProps) => {
   );
 };
 
-const MDXLayout = ({ children }: MDXLayoutProps) => {
+const MDXLayout = ({ children, darkMode }: MDXLayoutProps) => {
   const { asPath } = useRouter();
 
   const contentString = renderToString(children as React.ReactElement);
@@ -198,7 +212,7 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
     <Container
       px="md"
       css={{
-        mt: "$3",
+        pt: "$3",
       }}
     >
       <Grid.Container css={{ overflow: "visible" }}>
@@ -242,7 +256,7 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
               size="caption"
               mono
               css={{
-                color: "$gray700",
+                color: "$text",
               }}
             >
               Made by Heril Saha
@@ -260,7 +274,7 @@ const MDXLayout = ({ children }: MDXLayoutProps) => {
             },
           }}
         >
-          <TableOfContents subHeaders={subHeaders} />
+          <TableOfContents subHeaders={subHeaders} darkMode={darkMode} />
         </Grid>
       </Grid.Container>
     </Container>

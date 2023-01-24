@@ -3,7 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { DecaUIProvider, styled, Text } from "@deca-ui/react";
 import slugify from "slugify";
 import CodeBlock from "../components/CodeBlock";
-import theme from "../components/theme";
+import { createContext, useState } from "react";
 
 const Link = styled("a", {
   color: "$primary",
@@ -22,7 +22,18 @@ const Code = styled("code", {
   px: "$1",
 });
 
+export const ThemeContext = createContext<any>({
+  darkMode: false,
+  switchMode: () => {},
+});
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const switchMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
   const MDXComponents = {
     h1: (props: any) => (
       <Text
@@ -58,11 +69,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       );
     },
+
     p: (props: any) => (
       <Text
         as="p"
         css={{
-          color: "$gray700",
+          color: darkMode ? "$gray200" : "$gray700",
           py: "$1",
           fontWeight: "$normal",
         }}
@@ -96,11 +108,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   };
 
   return (
-    <DecaUIProvider theme={theme}>
+    <ThemeContext.Provider value={{ darkMode, switchMode }}>
       <MDXProvider components={MDXComponents}>
         <Component {...pageProps} />
       </MDXProvider>
-    </DecaUIProvider>
+    </ThemeContext.Provider>
   );
 };
 

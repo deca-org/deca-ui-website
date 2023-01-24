@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@deca-ui/react": {
+      "version": "1.5.1",
+      "signature": "ddcd15b3c216a4183e03549758ddcf4f",
+      "file": true
+    }
+  }
+}

@@ -1,20 +1,21 @@
 import slugify from "slugify";
 import Link from "next/link";
 import { Box, Grid, Text, Container, Button, theme } from "@deca-ui/react";
-import { Heart, Twitter, Menu } from "react-feather";
-import { useState, useEffect } from "react";
+import { Heart, Twitter, Menu, Moon, Sun } from "react-feather";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { AllRoutes } from "./MDXLayout";
 import Image from "next/image";
+import { ThemeContext } from "../pages/_app";
 
 interface NavbarProps {
   blockPosition?: boolean;
-  whiteBg?: boolean;
+  defaultBg?: boolean;
 }
 
 interface MobileMenuProps {
   currentPath?: string;
-  whiteBg?: boolean;
+  defaultBg?: boolean;
   scrollPosition: number;
 }
 
@@ -36,7 +37,7 @@ const NPMIcon = () => (
 
 const MobileMenu = ({
   currentPath,
-  whiteBg,
+  defaultBg,
   scrollPosition,
 }: MobileMenuProps) => (
   <Box
@@ -45,7 +46,11 @@ const MobileMenu = ({
       width: "100%",
       position: "fixed",
       top: "$sizes$19",
-      bg: whiteBg ? "$white" : scrollPosition > 0 ? "$white" : "$bg",
+      bg: defaultBg
+        ? "$bgSecondary"
+        : scrollPosition > 0
+        ? "$bgSecondary"
+        : "$bgPrimary",
       overflow: "auto",
       height: "calc(100% - 64px)",
       pb: "$4",
@@ -179,9 +184,11 @@ const MobileMenu = ({
   </Box>
 );
 
-const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
+const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
   const [scrollPosition, setScrollPositon] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const { darkMode, switchMode } = useContext(ThemeContext);
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -228,7 +235,13 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
           overflow: "hidden",
           top: 0,
           right: 0,
-          bg: whiteBg ? "$white" : scrollPosition > 0 ? "$white" : "$bg",
+          bg: defaultBg
+            ? darkMode
+              ? "$bgPrimary"
+              : "$bgSecondary"
+            : scrollPosition > 0
+            ? "$bgSecondary"
+            : "$bgPrimary",
           width: "100%",
           height: "$19",
           zIndex: "$10",
@@ -381,6 +394,11 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
                   window.open("https://twitter.com/deca_ui", "_blank")
                 }
               />
+              <Button
+                variant="ghost"
+                icon={darkMode ? <Sun /> : <Moon />}
+                onClick={switchMode}
+              />
 
               <Button
                 color="secondary"
@@ -425,7 +443,7 @@ const Navbar = ({ blockPosition, whiteBg }: NavbarProps) => {
       {mobileOpen && (
         <MobileMenu
           currentPath={asPath}
-          whiteBg={whiteBg}
+          defaultBg={defaultBg}
           scrollPosition={scrollPosition}
         />
       )}

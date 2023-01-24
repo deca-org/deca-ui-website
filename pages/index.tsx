@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import type { NextPage } from "next";
 import {
   theme,
@@ -15,19 +15,22 @@ import {
   TextAs,
 } from "@deca-ui/react";
 import { useRouter } from "next/router";
+import { ThemeContext } from "./_app";
 import Layout from "../components/Layout";
 import CodeBlock from "../components/CodeBlock";
 import { Copy, Moon, Layout as LayoutIcon, Command, Edit } from "react-feather";
 
-interface GeneralProps {
+interface CardProps {
   icon: any;
   header: string;
   children: React.ReactNode;
+  darkMode: boolean;
 }
 
-const Card = ({ icon, header, children }: GeneralProps) => (
+const Card = ({ icon, header, children, darkMode }: CardProps) => (
   <Box
     css={{
+      bg: darkMode ? "$bgPrimary" : "$white",
       width: "100%",
       boxShadow: "$default",
       br: "$sm",
@@ -49,7 +52,7 @@ const Card = ({ icon, header, children }: GeneralProps) => (
     </Text>
     <Text
       css={{
-        color: "$gray700",
+        color: "$body",
       }}
     >
       {children}
@@ -93,6 +96,8 @@ const Home: NextPage = () => {
 
   const router = useRouter();
 
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <Layout>
       <Box css={{ overflow: "hidden" }}>
@@ -101,7 +106,7 @@ const Home: NextPage = () => {
             overflow: "hidden",
             position: "relative",
             height: "100vh",
-            bg: "$bg",
+            bg: "$bgPrimary",
           }}
         >
           <Container px="md">
@@ -132,7 +137,7 @@ const Home: NextPage = () => {
                   weight="normal"
                   css={{
                     mt: "$3",
-                    color: "$gray700",
+                    color: "$body",
                     pr: "$3",
                   }}
                 >
@@ -162,8 +167,8 @@ const Home: NextPage = () => {
                     css={{
                       borderStyle: "solid",
                       borderWidth: "$normal",
-                      borderColor: "$gray700",
-                      color: "$gray700",
+                      borderColor: "$body",
+                      color: "$body",
                       br: "$sm",
                       height: "$10",
                       whiteSpace: "nowrap",
@@ -212,8 +217,8 @@ const Home: NextPage = () => {
                             m: "$n",
                             p: "$1",
                             px: "$3",
-                            bg: "$gray900",
-                            color: "$white",
+                            bg: "$bgSecondary",
+                            color: "$body",
                           }}
                         >
                           Copied
@@ -235,7 +240,7 @@ const Home: NextPage = () => {
               >
                 <Box
                   css={{
-                    bg: "$white",
+                    bg: "$bgSecondary",
                     zIndex: 1,
                     position: "relative",
                     boxShadow: "$default",
@@ -283,12 +288,14 @@ const Home: NextPage = () => {
                             ml: i === 1 ? "$n" : "$3",
                             color:
                               i === 4
-                                ? "$gray700"
+                                ? darkMode
+                                  ? "$gray600"
+                                  : "$gray700"
                                 : i === 5
-                                ? "$gray600"
-                                : i === 6
                                 ? "$gray500"
-                                : "$black",
+                                : i === 6
+                                ? "$gray400"
+                                : "$text",
                             fontWeight: i > 4 ? "normal" : "bold",
                           }}
                         >
@@ -337,7 +344,7 @@ const Home: NextPage = () => {
         <Box
           css={{
             position: "relative",
-            bg: "$white",
+            bg: "$bgSecondary",
           }}
         >
           <Container px="md">
@@ -345,25 +352,41 @@ const Home: NextPage = () => {
               <Box css={{ pb: "$6" }}>
                 <Grid.Container n={12} sm={6} lg={3} spacing="md">
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
-                    <Card header="Themeable" icon={<Edit />}>
+                    <Card
+                      header="Themeable"
+                      icon={<Edit />}
+                      darkMode={darkMode}
+                    >
                       Easy to customize the look and feel of your website by
                       editing the theme.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
-                    <Card header="Accessible" icon={<Command />}>
+                    <Card
+                      header="Accessible"
+                      icon={<Command />}
+                      darkMode={darkMode}
+                    >
                       All of DecaUI&apos;s components are built with
                       accessibility in mind so everyone can enjoy your site.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
-                    <Card header="Stitches" icon={<LayoutIcon />}>
+                    <Card
+                      header="Stitches"
+                      icon={<LayoutIcon />}
+                      darkMode={darkMode}
+                    >
                       Built with StitchesJS which provides world class developer
                       experience.
                     </Card>
                   </Grid>
                   <Grid css={{ display: "flex", flex: "1 1 auto" }}>
-                    <Card header="Dark Mode" icon={<Moon />}>
+                    <Card
+                      header="Dark Mode"
+                      icon={<Moon />}
+                      darkMode={darkMode}
+                    >
                       DecaUI&apos;s built in dark mode option allows your site
                       to feel sleek and modern.
                     </Card>
@@ -386,7 +409,7 @@ const Home: NextPage = () => {
                   <Text
                     weight="normal"
                     css={{
-                      color: "$gray700",
+                      color: "$body",
                       mt: "$3",
                     }}
                   >
@@ -415,7 +438,7 @@ const Home: NextPage = () => {
         </Box>
         <Box
           css={{
-            bg: "$bg",
+            bg: "$bgPrimary",
             py: "$5",
           }}
         >
@@ -441,7 +464,7 @@ const Home: NextPage = () => {
               </Text>
               <Text
                 css={{
-                  color: "$gray700",
+                  color: "$body",
                 }}
                 center
               >
@@ -471,7 +494,7 @@ const Home: NextPage = () => {
                   css={{
                     width: "100%",
                     br: "$sm",
-                    bg: "$white",
+                    bg: "$bgSecondary",
                     height: "100%",
                     dflex: "center",
                     flexDirection: "column",

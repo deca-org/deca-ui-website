@@ -1,6 +1,8 @@
+import React from "react"
 import Layout from "../../../components/Layout";
 import ComponentWrapper from "../../../components/ComponentWrapper"
-import { Checkbox } from "@deca-ui/react"
+import { DecaUIProvider, Checkbox } from "@deca-ui/react"
+
 
 # Checkbox
 Checkbox component is used in forms when a user needs to select multiple values from several options.
@@ -9,10 +11,9 @@ Checkbox component is used in forms when a user needs to select multiple values 
 ```
 import { Checkbox } from "@deca-ui/react"
 ```
-
 ## Usage
 <ComponentWrapper>
-  <Checkbox initialCheck label="Checkbox" />
+    <Checkbox initialCheck label="Checkbox" />
 </ComponentWrapper>
 ```
 <Checkbox initialCheck label="Checkbox" />
