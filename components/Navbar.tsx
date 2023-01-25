@@ -1,7 +1,7 @@
 import slugify from "slugify";
 import Link from "next/link";
 import { Box, Grid, Text, Container, Button, theme } from "@deca-ui/react";
-import { Heart, Twitter, Menu, Moon, Sun } from "react-feather";
+import { Heart, Twitter, Menu, Moon, Sun, GitHub } from "react-feather";
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { AllRoutes } from "./MDXLayout";
@@ -18,22 +18,6 @@ interface MobileMenuProps {
   defaultBg?: boolean;
   scrollPosition: number;
 }
-
-const NPMIcon = () => (
-  <svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clipPath="url(#prefix__clip0_3_5)">
-      <path
-        d="M9.914 0H0v20h9.913V5.044h5.043V20H20V0H9.914z"
-        fill="currentColor"
-      />
-    </g>
-    <defs>
-      <clipPath id="prefix__clip0_3_5">
-        <path fill="#fff" d="M0 0h20v20H0z" />
-      </clipPath>
-    </defs>
-  </svg>
-);
 
 const MobileMenu = ({
   currentPath,
@@ -75,7 +59,7 @@ const MobileMenu = ({
             size="lg"
             variant="flat"
             color="warning"
-            icon={<NPMIcon />}
+            icon={<GitHub />}
             css={{
               dflex: "center",
               "& svg": {
@@ -84,10 +68,7 @@ const MobileMenu = ({
               },
             }}
             onClick={() =>
-              window.open(
-                "https://www.npmjs.com/package/@deca-ui/react",
-                "_blank"
-              )
+              window.open("https://github.com/deca-org/deca-ui", "_blank")
             }
           />
           <Button
@@ -378,7 +359,7 @@ const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
             >
               <Button
                 variant="ghost"
-                icon={<NPMIcon />}
+                icon={<GitHub />}
                 css={{
                   dflex: "center",
                   "& svg": {
@@ -387,10 +368,7 @@ const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
                   },
                 }}
                 onClick={() =>
-                  window.open(
-                    "https://www.npmjs.com/package/@deca-ui/react",
-                    "_blank"
-                  )
+                  window.open("https://github.com/deca-org/deca-ui", "_blank")
                 }
               />
               <Button
