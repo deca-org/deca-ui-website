@@ -387,7 +387,9 @@ const Home: NextPage = () => {
               }}
             >
               <Box css={{ ml: "auto", mr: "auto" }}>
-                <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
+                <a href="https://www.npmjs.com/package/@deca-ui/react">
+                  <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
+                </a>
               </Box>
               <Text
                 as="h2"
