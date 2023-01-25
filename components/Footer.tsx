@@ -106,7 +106,7 @@ const Footer = () => {
                     justifyContent: "center",
                     px: "$3",
                     "@n": {
-                      overflowX: "scroll",
+                      overflowX: "hidden",
                       overflowY: "hidden",
                     },
                     "@xs": {
@@ -134,10 +134,24 @@ const Footer = () => {
                               "npm install @deca-ui/react"
                             );
                           }}
-                          variant="ghost"
+                          variant={
+                            {
+                              "@n": "solid",
+                              "@xs": "ghost",
+                            } as any
+                          }
                           css={{
                             br: "$xs",
                             ml: "$2",
+                            "@n": {
+                              position: "absolute",
+                              right: "calc($3 + $2)",
+                            },
+                            "@xs": {
+                              color: "$secondary",
+                              position: "relative",
+                              right: 0,
+                            },
                           }}
                         />
                       </Popover.Trigger>
