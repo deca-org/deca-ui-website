@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
 import type { NextPage } from "next";
 import {
   theme,
@@ -19,6 +20,7 @@ import { ThemeContext } from "./_app";
 import Layout from "../components/Layout";
 import CodeBlock from "../components/CodeBlock";
 import { Copy, Moon, Layout as LayoutIcon, Command, Edit } from "react-feather";
+import Image from "next/image";
 
 interface CardProps {
   icon: any;
@@ -97,6 +99,19 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   const { darkMode } = useContext(ThemeContext);
+
+  const [downloads, setDownloads] = useState(0);
+
+  useEffect(() => {
+    axios
+      .get("https://api.npmjs.org/downloads/point/last-week/@deca-ui/react")
+      .then((res) => {
+        setDownloads(res.data.downloads);
+      })
+      .catch(() => {
+        console.error("Failure to obtain API data");
+      });
+  }, []);
 
   return (
     <Layout title="A component library that suits all your needs">
@@ -362,6 +377,37 @@ const Home: NextPage = () => {
             bg: "$bgSecondary",
           }}
         >
+          <Container px="md">
+            <Box
+              css={{
+                pt: "$5",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Box css={{ ml: "auto", mr: "auto" }}>
+                <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
+              </Box>
+              <Text
+                as="h2"
+                mono
+                center
+                css={{ letterSpacing: "0.4rem" }}
+                size={{ "@n": "h3", "@xs": "h2" }}
+              >
+                {downloads.toLocaleString()}
+              </Text>
+              <Text
+                as="p"
+                mono
+                center
+                css={{ color: darkMode ? "$gray400" : "$gray600" }}
+              >
+                Weekly Downloads
+              </Text>
+            </Box>
+          </Container>
           <Container px="md">
             <Box css={{ py: "$5" }}>
               <Box css={{ pb: "$6" }}>
