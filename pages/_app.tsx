@@ -1,9 +1,13 @@
 import type { AppProps } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
-import { DecaUIProvider, styled, Text } from "@deca-ui/react";
+import { styled, Text } from "@deca-ui/react";
 import slugify from "slugify";
 import CodeBlock from "../components/CodeBlock";
 import { createContext, useState } from "react";
+import Script from "next/script";
+import * as gtag from "../utils/gtag";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Link = styled("a", {
   color: "$primary",
@@ -29,6 +33,20 @@ export const ThemeContext = createContext<any>({
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [darkMode, setDarkMode] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: any) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on("hashChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off("hashChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   const switchMode = () => {
     setDarkMode((prev) => !prev);
@@ -108,11 +126,33 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ darkMode, switchMode }}>
-      <MDXProvider components={MDXComponents}>
-        <Component {...pageProps} />
-      </MDXProvider>
-    </ThemeContext.Provider>
+    <>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+
+      <ThemeContext.Provider value={{ darkMode, switchMode }}>
+        <MDXProvider components={MDXComponents}>
+          <Component {...pageProps} />
+        </MDXProvider>
+      </ThemeContext.Provider>
+    </>
   );
 };
 
