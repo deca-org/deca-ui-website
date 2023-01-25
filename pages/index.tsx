@@ -99,7 +99,7 @@ const Home: NextPage = () => {
   const { darkMode } = useContext(ThemeContext);
 
   return (
-    <Layout>
+    <Layout title="A component library that suits all your needs">
       <Box css={{ overflow: "hidden" }}>
         <Box
           css={{

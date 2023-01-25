@@ -9,6 +9,7 @@ import {
 } from "@deca-ui/react";
 import { useRouter } from "next/router";
 import { Copy, GitHub, Twitter } from "react-feather";
+import Image from "next/image";
 
 const Footer = () => {
   const router = useRouter();
@@ -253,15 +254,15 @@ const Footer = () => {
         css={{
           dflex: "center",
           flexDirection: "column",
+          gap: "$2",
           pb: "$4",
           "& img": {
             size: "$15",
             br: "$pill",
-            mb: "$2",
           },
         }}
       >
-        <img src="/headshot.png" alt="Headshot" />
+        <Image src="/headshot.png" alt="Headshot" width={60} height={60} />
         <Text
           mono
           css={{
