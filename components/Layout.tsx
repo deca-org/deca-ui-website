@@ -40,47 +40,47 @@ const Layout = ({
         }}
         openGraph={{
           url: "https://www.deca-ui.com",
-          title: "DecaUI",
+          title: "DecaUI - A component library that suits all your needs",
           description:
             "A set of accessible and customizable React components that make it make it easy to quickly prototype and develop stunning websites.",
           images: [
             {
-              url: "OG/OG900x800-dark.jpg",
+              url: "https://www.deca-ui.com/OG/OG900x800-dark.jpg",
               width: 900,
               height: 800,
               alt: "DecaUI (Dark Mode)",
               type: "image/jpeg",
             },
             {
-              url: "OG/OG900x800-light.jpg",
+              url: "https://www.deca-ui.com/OG/OG900x800-light.jpg",
               width: 900,
               height: 800,
               alt: "DecaUI (Light Mode)",
               type: "image/jpeg",
             },
             {
-              url: "OG/OG800x600-dark.jpg",
+              url: "https://www.deca-ui.com/OG/OG800x600-dark.jpg",
               width: 800,
               height: 600,
               alt: "DecaUI (Dark Mode)",
               type: "image/jpeg",
             },
             {
-              url: "OG/OG800x600-light.jpg",
+              url: "https://www.deca-ui.com/OG/OG800x600-light.jpg",
               width: 800,
               height: 600,
               alt: "DecaUI (Dark Mode)",
               type: "image/jpeg",
             },
             {
-              url: "OG/OG250x250-dark.jpg",
+              url: "https://www.deca-ui.com/OG/OG250x250-dark.jpg",
               width: 250,
               height: 250,
               alt: "DecaUI (Dark Mode) Small Logo",
               type: "image/jpeg",
             },
             {
-              url: "OG/OG250x250-light.jpg",
+              url: "https://www.deca-ui.com/OG/OG250x250-light.jpg",
               width: 250,
               height: 250,
               alt: "DecaUI (Light Mode) Small Logo",
