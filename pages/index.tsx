@@ -165,6 +165,7 @@ const Home: NextPage = () => {
                   </Button>
                   <Box
                     css={{
+                      position: "relative",
                       borderStyle: "solid",
                       borderWidth: "$normal",
                       borderColor: "$body",
@@ -178,7 +179,7 @@ const Home: NextPage = () => {
                       justifyContent: "center",
                       px: "$3",
                       "@n": {
-                        overflowX: "scroll",
+                        overflowX: "hidden",
                         overflowY: "hidden",
                       },
                       "@xs": {
@@ -205,10 +206,24 @@ const Home: NextPage = () => {
                                 "npm install @deca-ui/react"
                               );
                             }}
-                            variant="ghost"
+                            variant={
+                              {
+                                "@n": "solid",
+                                "@xs": "ghost",
+                              } as any
+                            }
                             css={{
                               br: "$xs",
                               ml: "$2",
+                              "@n": {
+                                position: "absolute",
+                                right: "$2",
+                              },
+                              "@xs": {
+                                color: "$primary",
+                                position: "relative",
+                                right: 0,
+                              },
                             }}
                           />
                         </Popover.Trigger>
