@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import slugify from "slugify";
-import {
-  DecaUIProvider,
-  Container,
-  Text,
-  Box,
-  Grid,
-  Checkbox,
-} from "@deca-ui/react";
+import { Container, Text, Box, Grid } from "@deca-ui/react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { renderToString } from "react-dom/server";
-import { darkTheme } from "./theme";
+import Image from "next/image";
 
 interface MDXLayoutProps {
   children?: React.ReactNode;
@@ -244,14 +237,13 @@ const MDXLayout = ({ children, darkMode }: MDXLayoutProps) => {
               dflex: "center",
               flexDirection: "column",
               pb: "$3",
+              gap: "$2",
               "& img": {
-                size: "$11",
                 br: "$pill",
-                mb: "$2",
               },
             }}
           >
-            <img src="/headshot.png" alt="Headshot" />
+            <Image src="/headshot.png" alt="Headshot" width={50} height={50} />
             <Text
               size="caption"
               mono
