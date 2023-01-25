@@ -281,7 +281,7 @@ const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
                 },
                 "@md": {
                   display: "flex",
-                  justifyContent: "center",
+                  justifyContent: "flex-start",
                   gap: "$5",
                 },
               }}
