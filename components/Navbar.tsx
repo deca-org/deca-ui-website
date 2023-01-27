@@ -377,6 +377,14 @@ const Navbar = ({ blockPosition, defaultBg }: NavbarProps) => {
                 onClick={() =>
                   window.open("https://twitter.com/deca_ui", "_blank")
                 }
+                css={{
+                  "@md": {
+                    display: "none",
+                  },
+                  "@lg": {
+                    display: "block",
+                  },
+                }}
               />
               <Button
                 variant="ghost"
