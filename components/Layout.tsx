@@ -95,11 +95,24 @@ const Layout = ({
         theme={darkMode ? darkTheme : lightTheme}
         mode={darkMode ? "dark" : "light"}
       >
+      	<Box css={{
+		zIndex: "9999",
+		bottom: 0,
+		position: "fixed",
+		width: "100%",
+		textAlign: "center",
+		bg: "orange",
+		py: "$2",
+		fontWeight: "bold",
+		borderTop: "solid 4px #AF6714",
+		color: "#8D4F07"
+	}}>Deprecation Notice: I am sorry to say that as of June 28 2023, DecaUI is no longer actively maintained.</Box>
         <Box
           css={{
             position: "relative",
             bg: darkMode ? "$bgPrimary" : "$bgSecondary",
             minHeight: "100vh",
+	    pb: "2rem"
           }}
         >
           <Navbar
