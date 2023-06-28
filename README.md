@@ -1,3 +1,6 @@
+> **Warning**
+> I am sorry to say that as of June 28 2023, DecaUI is no longer actively maintained.
+
 <p align="center">
   <a href="https://deca-ui.com/" rel="noopener" target="_blank"><img width="100" src="https://www.deca-ui.com/icon.svg" alt="DecaUI logo"></a>
   <h1 align="center">DecaUI</h1>
