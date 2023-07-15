@@ -100,19 +100,6 @@ const Home: NextPage = () => {
 
   const { darkMode } = useContext(ThemeContext);
 
-  const [downloads, setDownloads] = useState(0);
-
-  useEffect(() => {
-    axios
-      .get("https://api.npmjs.org/downloads/point/last-week/@deca-ui/react")
-      .then((res) => {
-        setDownloads(res.data.downloads);
-      })
-      .catch(() => {
-        console.error("Failure to obtain API data");
-      });
-  }, []);
-
   return (
     <Layout title="A component library that suits all your needs">
       <Box css={{ overflow: "hidden" }}>
@@ -398,15 +385,7 @@ const Home: NextPage = () => {
                 css={{ letterSpacing: "0.4rem" }}
                 size={{ "@n": "h3", "@xs": "h2" }}
               >
-                {downloads.toLocaleString()}
-              </Text>
-              <Text
-                as="p"
-                mono
-                center
-                css={{ color: darkMode ? "$gray400" : "$gray600" }}
-              >
-                Weekly Downloads
+                Package Deleted
               </Text>
             </Box>
           </Container>
