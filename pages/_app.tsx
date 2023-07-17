@@ -8,6 +8,7 @@ import Script from "next/script";
 import * as gtag from "../utils/gtag";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Head from "next/head";
 
 const Link = styled("a", {
   color: "$primary",
@@ -146,6 +147,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           `,
         }}
       />
+
+      {/* Shutdown of DecaUI - No Follow, No Index*/}
+      <Head>
+        <meta name="Googlebot-News" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noimageindex" />
+      </Head>
 
       <ThemeContext.Provider value={{ darkMode, switchMode }}>
         <MDXProvider components={MDXComponents}>

@@ -378,13 +378,7 @@ const Home: NextPage = () => {
                   <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
                 </a>
               </Box>
-              <Text
-                as="h2"
-                mono
-                center
-                css={{ letterSpacing: "0.4rem" }}
-                size={{ "@n": "h3", "@xs": "h2" }}
-              >
+              <Text as="h2" mono center size={{ "@n": "h3", "@xs": "h2" }}>
                 Package Deleted
               </Text>
             </Box>
