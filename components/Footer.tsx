@@ -262,14 +262,14 @@ const Footer = () => {
           },
         }}
       >
-        <Image src="/headshot.png" alt="Headshot" width={60} height={60} />
+        <Image src="/headshot.webp" alt="Headshot" width={60} height={60} />
         <Text
           mono
           css={{
             color: "$body",
           }}
         >
-          Made by Heril Saha
+          Made by Elliot Saha
         </Text>
       </Box>
     </Box>

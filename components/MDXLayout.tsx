@@ -243,7 +243,7 @@ const MDXLayout = ({ children, darkMode }: MDXLayoutProps) => {
               },
             }}
           >
-            <Image src="/headshot.png" alt="Headshot" width={50} height={50} />
+            <Image src="/headshot.webp" alt="Headshot" width={50} height={50} />
             <Text
               size="caption"
               mono
@@ -251,7 +251,7 @@ const MDXLayout = ({ children, darkMode }: MDXLayoutProps) => {
                 color: "$text",
               }}
             >
-              Made by Heril Saha
+              Made by Elliot Saha
             </Text>
           </Box>
         </Grid>
