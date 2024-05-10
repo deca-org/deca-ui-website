@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import Link from "next/link";
-import { Box, Grid, Text, Container, Button, theme } from "@deca-ui/react";
+import { Box, Grid, Text, Container, Button, theme } from "../deca-ui/module/index";
 import { Heart, Twitter, Menu, Moon, Sun, GitHub } from "react-feather";
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";

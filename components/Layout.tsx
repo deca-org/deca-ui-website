@@ -1,8 +1,8 @@
-import { Box } from "@deca-ui/react";
+import { Box } from "../deca-ui/module/index";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import MDXLayout from "./MDXLayout";
-import { DecaUIProvider } from "@deca-ui/react";
+import { DecaUIProvider } from "../deca-ui/module/index";
 import { lightTheme, darkTheme } from "./theme";
 import { ThemeContext } from "../pages/_app";
 import { useContext } from "react";

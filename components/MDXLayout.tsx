@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import slugify from "slugify";
-import { Container, Text, Box, Grid } from "@deca-ui/react";
+import { Container, Text, Box, Grid } from "../deca-ui/module/index";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { renderToString } from "react-dom/server";

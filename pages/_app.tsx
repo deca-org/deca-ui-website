@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
-import { styled, Text } from "@deca-ui/react";
+import { styled, Text } from "../deca-ui/module/index";
 import slugify from "slugify";
 import CodeBlock from "../components/CodeBlock";
 import { createContext, useState } from "react";

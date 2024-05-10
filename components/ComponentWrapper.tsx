@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, DecaUIProvider, baseTheme } from "@deca-ui/react";
+import { Box, DecaUIProvider, baseTheme } from "../deca-ui/module/index";
 import { defaultTheme } from "../components/theme";
 import { ThemeContext } from "../pages/_app";
 

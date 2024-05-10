@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Popover, theme, CSS } from "@deca-ui/react";
+import { Box, Button, Popover, theme, CSS } from "../deca-ui/module/index";
 import { Prism as SyntaxHighligher } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Copy, ArrowDown } from "react-feather";

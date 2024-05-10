@@ -1,6 +1,6 @@
 import React from "react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { getCssText } from "@deca-ui/react";
+import { getCssText } from "../deca-ui/module/index";
 
 export default class Document extends NextDocument {
   render() {

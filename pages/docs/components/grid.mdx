@@ -1,5 +1,5 @@
 import Layout from "../../../components/Layout";
-import {Grid, Box} from "@deca-ui/react"
+import {Grid, Box} from "../../../deca-ui/module/index"
 import ComponentWrapper from "../../../components/ComponentWrapper"
 
 # Grid
@@ -7,7 +7,7 @@ Grid component is used to create a responsive layout grid that adapts to screen 
 
 ## Import
 ```
-import { Grid } from "@deca-ui/react"
+import { Grid } from "../../../deca-ui/module/index"
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ Using breakpoints on Grid.Container applies it to all Grid children components
   <Grid.Container n={12} xs={6}><Grid><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 1</Box></Grid><Grid><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 2</Box></Grid></Grid.Container>
 </ComponentWrapper>
 ```
-import {styled} from "@deca-ui/react"
+import {styled} from "../../../deca-ui/module/index"
 
 const MockItem = styled("div", {
   bg: "$primary",
@@ -41,7 +41,7 @@ Grid components can have individual breakpoints that override the given breakpoi
   <Grid.Container n={12}><Grid xs={4}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 1</Box></Grid><Grid xs={8}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 2</Box></Grid><Grid xs={8}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 3</Box></Grid><Grid xs={4}><Box css={{bg: "$primary", p: "$3", color: "$white", br: "$md"}}>Item 4</Box></Grid></Grid.Container>
 </ComponentWrapper>
 ```
-import {styled} from "@deca-ui/react"
+import {styled} from "../../../deca-ui/module/index"
 
 const MockItem = styled("div", {
   bg: "$primary",
