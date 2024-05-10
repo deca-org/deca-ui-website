@@ -21,6 +21,7 @@
     "@types/react-syntax-highlighter": "^15.5.5",
     "axios": "^1.2.4",
     "clsx": "^2.1.1",
+    "comma-separated-tokens": "^2.0.3",
     "next": "12.2.5",
     "next-seo": "^5.15.0",
     "node": "^18.20.2",
