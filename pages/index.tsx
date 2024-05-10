@@ -377,7 +377,7 @@ const Home: NextPage = () => {
                 <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
               </Box>
               <Text as="h2" mono center size={{ "@n": "h3", "@xs": "h2" }}>
-                +600,000 Downloads
+                500,000+ Downloads
               </Text>
             </Box>
           </Container>
