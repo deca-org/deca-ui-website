@@ -1,0 +1,3 @@
+[submodule "deca-ui"]
+	path = deca-ui
+	url = https://github.com/deca-org/deca-ui
