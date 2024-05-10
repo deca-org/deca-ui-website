@@ -16,7 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@deca-ui/react": ["deca-ui/build/module/index"]
+      "@deca-ui/react": ["deca-ui/module/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
