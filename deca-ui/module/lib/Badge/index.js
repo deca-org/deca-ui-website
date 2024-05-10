@@ -1,0 +1,5 @@
+import Badge from './Badge';
+export * from './Badge';
+export { Badge };
+export default Badge;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvbGliL0JhZGdlL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sS0FBSyxNQUFNLFNBQVMsQ0FBQztBQUM1QixjQUFjLFNBQVMsQ0FBQztBQUN4QixPQUFPLEVBQUUsS0FBSyxFQUFFLENBQUM7QUFDakIsZUFBZSxLQUFLLENBQUMifQ==

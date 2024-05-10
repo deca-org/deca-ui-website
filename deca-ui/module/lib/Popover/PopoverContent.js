@@ -1,0 +1,54 @@
+import { ThemeContext } from '../Theme';
+import { mergeRefs, useClickOutside, __DEV__, } from '../Utils';
+import { animated, useTransition } from '@react-spring/web';
+import clsx from 'clsx';
+import React, { useState, useEffect, useContext } from 'react';
+import ReactDOM from 'react-dom';
+import { PopoverContext } from './Popover';
+import { StyledPopover } from './Popover.styles';
+const PopoverContent = React.forwardRef(({ children, css, className = '', as, ...props }, ref) => {
+    const context = useContext(PopoverContext);
+    const clickOutsideRef = useClickOutside(() => {
+        context.setOpen && context.setOpen(false);
+    }, [context.triggerRef]);
+    const transition = useTransition(context.open, {
+        from: {
+            scale: 0.75,
+            opacity: 0,
+        },
+        enter: {
+            scale: 1,
+            opacity: 1,
+        },
+        leave: {
+            scale: 0.75,
+            opacity: 0,
+        },
+        config: {
+            tension: 300,
+            friction: 19,
+        },
+    });
+    const preClass = 'decaPopover';
+    const { dark } = React.useContext(ThemeContext);
+    const [DOM, setDOM] = useState(false);
+    useEffect(() => {
+        setDOM(true);
+    }, []);
+    if (DOM) {
+        return ReactDOM.createPortal(transition((style, item) => item && (React.createElement(StyledPopover, { style: style, ref: mergeRefs(context.mainComponentRef, context.floating, clickOutsideRef, ref), css: {
+                position: context.strategy,
+                top: context.y ?? 0,
+                left: context.x ?? 0,
+                ...css,
+            }, className: clsx(className, `${preClass}-root`), as: animated[as], isDark: dark, ...props }, children))), document.getElementById('decaUI-provider')
+            ? document.getElementById('decaUI-provider')
+            : document.querySelector('body'));
+    }
+    return React.createElement(React.Fragment, null);
+});
+if (__DEV__) {
+    PopoverContent.displayName = 'DecaUI.PopoverContent';
+}
+export default PopoverContent;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUG9wb3ZlckNvbnRlbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvbGliL1BvcG92ZXIvUG9wb3ZlckNvbnRlbnQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSxZQUFZLENBQUM7QUFFMUMsT0FBTyxFQUdMLFNBQVMsRUFDVCxlQUFlLEVBQ2YsT0FBTyxHQUNSLE1BQU0sWUFBWSxDQUFDO0FBQ3BCLE9BQU8sRUFBRSxRQUFRLEVBQUUsYUFBYSxFQUFFLE1BQU0sbUJBQW1CLENBQUM7QUFDNUQsT0FBTyxJQUFJLE1BQU0sTUFBTSxDQUFDO0FBQ3hCLE9BQU8sS0FBSyxFQUFFLEVBQUUsUUFBUSxFQUFFLFNBQVMsRUFBRSxVQUFVLEVBQUUsTUFBTSxPQUFPLENBQUM7QUFDL0QsT0FBTyxRQUFRLE1BQU0sV0FBVyxDQUFDO0FBRWpDLE9BQU8sRUFBRSxjQUFjLEVBQW1CLE1BQU0sV0FBVyxDQUFDO0FBQzVELE9BQU8sRUFBRSxhQUFhLEVBQUUsTUFBTSxrQkFBa0IsQ0FBQztBQTRCakQsTUFBTSxjQUFjLEdBQTRCLEtBQUssQ0FBQyxVQUFVLENBQzlELENBQ0UsRUFBRSxRQUFRLEVBQUUsR0FBRyxFQUFFLFNBQVMsR0FBRyxFQUFFLEVBQUUsRUFBRSxFQUFFLEdBQUcsS0FBSyxFQUEwQixFQUN2RSxHQUF1QixFQUN2QixFQUFFO0lBQ0YsTUFBTSxPQUFPLEdBQUcsVUFBVSxDQUFDLGNBQWMsQ0FBb0IsQ0FBQztJQUU5RCxNQUFNLGVBQWUsR0FBRyxlQUFlLENBQUMsR0FBRyxFQUFFO1FBQzNDLE9BQU8sQ0FBQyxPQUFPLElBQUksT0FBTyxDQUFDLE9BQU8sQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUM1QyxDQUFDLEVBQUUsQ0FBQyxPQUFPLENBQUMsVUFBVSxDQUFDLENBQUMsQ0FBQztJQUV6QixNQUFNLFVBQVUsR0FBRyxhQUFhLENBQUMsT0FBTyxDQUFDLElBQUksRUFBRTtRQUM3QyxJQUFJLEVBQUU7WUFDSixLQUFLLEVBQUUsSUFBSTtZQUNYLE9BQU8sRUFBRSxDQUFDO1NBQ1g7UUFDRCxLQUFLLEVBQUU7WUFDTCxLQUFLLEVBQUUsQ0FBQztZQUNSLE9BQU8sRUFBRSxDQUFDO1NBQ1g7UUFDRCxLQUFLLEVBQUU7WUFDTCxLQUFLLEVBQUUsSUFBSTtZQUNYLE9BQU8sRUFBRSxDQUFDO1NBQ1g7UUFDRCxNQUFNLEVBQUU7WUFDTixPQUFPLEVBQUUsR0FBRztZQUNaLFFBQVEsRUFBRSxFQUFFO1NBQ2I7S0FDRixDQUFDLENBQUM7SUFFSCxNQUFNLFFBQVEsR0FBRyxhQUFhLENBQUM7SUFFL0IsTUFBTSxFQUFFLElBQUksRUFBRSxHQUFHLEtBQUssQ0FBQyxVQUFVLENBQUMsWUFBWSxDQUFDLENBQUM7SUFFaEQsTUFBTSxDQUFDLEdBQUcsRUFBRSxNQUFNLENBQUMsR0FBRyxRQUFRLENBQUMsS0FBSyxDQUFDLENBQUM7SUFFdEMsU0FBUyxDQUFDLEdBQUcsRUFBRTtRQUNiLE1BQU0sQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUNmLENBQUMsRUFBRSxFQUFFLENBQUMsQ0FBQztJQUVQLElBQUksR0FBRyxFQUFFO1FBQ1AsT0FBTyxRQUFRLENBQUMsWUFBWSxDQUMxQixVQUFVLENBQ1IsQ0FBQyxLQUFLLEVBQUUsSUFBSSxFQUFFLEVBQUUsQ0FDZCxJQUFJLElBQUksQ0FDTixvQkFBQyxhQUFhLElBQ1osS0FBSyxFQUFFLEtBQUssRUFDWixHQUFHLEVBQUUsU0FBUyxDQUNaLE9BQU8sQ0FBQyxnQkFBZ0IsRUFDeEIsT0FBTyxDQUFDLFFBQVEsRUFDaEIsZUFBZSxFQUNmLEdBQUcsQ0FDSixFQUNELEdBQUcsRUFBRTtnQkFDSCxRQUFRLEVBQUUsT0FBTyxDQUFDLFFBQVE7Z0JBQzFCLEdBQUcsRUFBRSxPQUFPLENBQUMsQ0FBQyxJQUFJLENBQUM7Z0JBQ25CLElBQUksRUFBRSxPQUFPLENBQUMsQ0FBQyxJQUFJLENBQUM7Z0JBQ3BCLEdBQUcsR0FBRzthQUNQLEVBQ0QsU0FBUyxFQUFFLElBQUksQ0FBQyxTQUFTLEVBQUUsR0FBRyxRQUFRLE9BQU8sQ0FBQyxFQUM5QyxFQUFFLEVBQUUsUUFBUSxDQUFDLEVBQWlDLENBQUMsRUFDL0MsTUFBTSxFQUFFLElBQUksS0FDUixLQUFLLElBRVIsUUFBUSxDQUNLLENBQ2pCLENBQ0osRUFDRCxRQUFRLENBQUMsY0FBYyxDQUFDLGlCQUFpQixDQUFDO1lBQ3hDLENBQUMsQ0FBRSxRQUFRLENBQUMsY0FBYyxDQUFDLGlCQUFpQixDQUFhO1lBQ3pELENBQUMsQ0FBRSxRQUFRLENBQUMsYUFBYSxDQUFDLE1BQU0sQ0FBYSxDQUNoRCxDQUFDO0tBQ0g7SUFDRCxPQUFPLHlDQUFLLENBQUM7QUFDZixDQUFDLENBQ0YsQ0FBQztBQUVGLElBQUksT0FBTyxFQUFFO0lBQ1gsY0FBYyxDQUFDLFdBQVcsR0FBRyx1QkFBdUIsQ0FBQztDQUN0RDtBQUVELGVBQWUsY0FBYyxDQUFDIn0=

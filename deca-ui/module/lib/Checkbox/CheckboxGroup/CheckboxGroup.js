@@ -1,0 +1,31 @@
+import { uuid, __DEV__, } from '../../Utils';
+import clsx from 'clsx';
+import React, { useMemo } from 'react';
+import { StyledCheckboxGroupWrapper } from './CheckboxGroup.styles';
+const CheckboxGroup = React.forwardRef(({ children, defaultValue, className = '', name, onChange, value, disabled = false, as, css, color, size, ...props }, ref) => {
+    const presetId = uuid('checkbox');
+    const getName = useMemo(() => {
+        if (name) {
+            return name;
+        }
+        return presetId;
+    }, [name]);
+    const preClass = 'decaCheckboxGroup';
+    return (React.createElement(StyledCheckboxGroupWrapper, { ref: ref, className: clsx(className, `${preClass}-root`), as: as, css: css, ...props }, React.Children.map(children, (child) => {
+        return React.cloneElement(child, {
+            name: getName,
+            onChange,
+            initialCheck: defaultValue &&
+                defaultValue.includes(child.props.value),
+            checked: value && value.includes(child.props.value),
+            disabled: disabled ? disabled : child.props.disabled,
+            color,
+            size,
+        });
+    })));
+});
+if (__DEV__) {
+    CheckboxGroup.displayName = 'DecaUI.CheckboxGroup';
+}
+export default CheckboxGroup;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2hlY2tib3hHcm91cC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9saWIvQ2hlY2tib3gvQ2hlY2tib3hHcm91cC9DaGVja2JveEdyb3VwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQSxPQUFPLEVBR0wsSUFBSSxFQUNKLE9BQU8sR0FDUixNQUFNLFlBQVksQ0FBQztBQUNwQixPQUFPLElBQUksTUFBTSxNQUFNLENBQUM7QUFDeEIsT0FBTyxLQUFLLEVBQUUsRUFBRSxPQUFPLEVBQUUsTUFBTSxPQUFPLENBQUM7QUFDdkMsT0FBTyxFQUFFLDBCQUEwQixFQUFFLE1BQU0sd0JBQXdCLENBQUM7QUEyRHBFLE1BQU0sYUFBYSxHQUEyQixLQUFLLENBQUMsVUFBVSxDQUM1RCxDQUNFLEVBQ0UsUUFBUSxFQUNSLFlBQVksRUFDWixTQUFTLEdBQUcsRUFBRSxFQUNkLElBQUksRUFDSixRQUFRLEVBQ1IsS0FBSyxFQUNMLFFBQVEsR0FBRyxLQUFLLEVBQ2hCLEVBQUUsRUFDRixHQUFHLEVBQ0gsS0FBSyxFQUNMLElBQUksRUFDSixHQUFHLEtBQUssRUFDYyxFQUN4QixHQUF1QixFQUN2QixFQUFFO0lBQ0YsTUFBTSxRQUFRLEdBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQyxDQUFDO0lBRWxDLE1BQU0sT0FBTyxHQUFHLE9BQU8sQ0FBQyxHQUFHLEVBQUU7UUFDM0IsSUFBSSxJQUFJLEVBQUU7WUFDUixPQUFPLElBQUksQ0FBQztTQUNiO1FBQ0QsT0FBTyxRQUFRLENBQUM7SUFDbEIsQ0FBQyxFQUFFLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQztJQUVYLE1BQU0sUUFBUSxHQUFHLG1CQUFtQixDQUFDO0lBRXJDLE9BQU8sQ0FDTCxvQkFBQywwQkFBMEIsSUFDekIsR0FBRyxFQUFFLEdBQUcsRUFDUixTQUFTLEVBQUUsSUFBSSxDQUFDLFNBQVMsRUFBRSxHQUFHLFFBQVEsT0FBTyxDQUFDLEVBQzlDLEVBQUUsRUFBRSxFQUFFLEVBQ04sR0FBRyxFQUFFLEdBQUcsS0FDSixLQUFLLElBRVIsS0FBSyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQ2pCLFFBQWdFLEVBQ2hFLENBQUMsS0FBMkQsRUFBRSxFQUFFO1FBQzlELE9BQU8sS0FBSyxDQUFDLFlBQVksQ0FBQyxLQUFLLEVBQUU7WUFDL0IsSUFBSSxFQUFFLE9BQU87WUFDYixRQUFRO1lBQ1IsWUFBWSxFQUNWLFlBQVk7Z0JBQ1osWUFBWSxDQUFDLFFBQVEsQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDLEtBQWUsQ0FBQztZQUNwRCxPQUFPLEVBQUUsS0FBSyxJQUFJLEtBQUssQ0FBQyxRQUFRLENBQUMsS0FBSyxDQUFDLEtBQUssQ0FBQyxLQUFlLENBQUM7WUFDN0QsUUFBUSxFQUFFLFFBQVEsQ0FBQyxDQUFDLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDLFFBQVE7WUFDcEQsS0FBSztZQUNMLElBQUk7U0FDTCxDQUFDLENBQUM7SUFDTCxDQUFDLENBQ0YsQ0FDMEIsQ0FDOUIsQ0FBQztBQUNKLENBQUMsQ0FDRixDQUFDO0FBRUYsSUFBSSxPQUFPLEVBQUU7SUFDWCxhQUFhLENBQUMsV0FBVyxHQUFHLHNCQUFzQixDQUFDO0NBQ3BEO0FBRUQsZUFBZSxhQUFhLENBQUMifQ==

@@ -1,0 +1,5 @@
+import Button from './Button';
+export * from './Button';
+export { Button };
+export default Button;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvbGliL0J1dHRvbi9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLE1BQU0sTUFBTSxVQUFVLENBQUM7QUFDOUIsY0FBYyxVQUFVLENBQUM7QUFDekIsT0FBTyxFQUFFLE1BQU0sRUFBRSxDQUFDO0FBQ2xCLGVBQWUsTUFBTSxDQUFDIn0=
