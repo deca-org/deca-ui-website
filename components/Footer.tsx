@@ -6,7 +6,7 @@ import {
   Container,
   Button,
   Popover,
-} from "@deca-ui/react";
+} from "../deca-ui/module/index";
 import { useRouter } from "next/router";
 import { Copy, GitHub, Twitter } from "react-feather";
 import Image from "next/image";
@@ -131,7 +131,7 @@ const Footer = () => {
                           color="secondary"
                           onClick={() => {
                             navigator.clipboard.writeText(
-                              "npm install @deca-ui/react"
+                              "npm install @deca-ui/react",
                             );
                           }}
                           variant={

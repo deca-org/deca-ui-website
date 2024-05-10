@@ -14,7 +14,7 @@ import {
   Radio,
   Popover,
   TextAs,
-} from "@deca-ui/react";
+} from "../deca-ui/module/index";
 import { useRouter } from "next/router";
 import { ThemeContext } from "./_app";
 import Layout from "../components/Layout";
