@@ -205,7 +205,7 @@ const Home: NextPage = () => {
                             icon={<Copy />}
                             onClick={() => {
                               navigator.clipboard.writeText(
-                                "npm install @deca-ui/react"
+                                "npm install @deca-ui/react",
                               );
                             }}
                             variant={
@@ -309,10 +309,10 @@ const Home: NextPage = () => {
                                   ? "$gray600"
                                   : "$gray700"
                                 : i === 5
-                                ? "$gray500"
-                                : i === 6
-                                ? "$gray400"
-                                : "$text",
+                                  ? "$gray500"
+                                  : i === 6
+                                    ? "$gray400"
+                                    : "$text",
                             fontWeight: i > 4 ? "normal" : "bold",
                           }}
                         >
@@ -374,12 +374,10 @@ const Home: NextPage = () => {
               }}
             >
               <Box css={{ ml: "auto", mr: "auto" }}>
-                <a href="https://www.npmjs.com/package/@deca-ui/react">
-                  <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
-                </a>
+                <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
               </Box>
               <Text as="h2" mono center size={{ "@n": "h3", "@xs": "h2" }}>
-                Package Deleted
+                +600,000 Downloads
               </Text>
             </Box>
           </Container>
