@@ -269,7 +269,7 @@ const Footer = () => {
             color: "$body",
           }}
         >
-          Made by Elliot Saha
+          Made by Elliot Madoc
         </Text>
       </Box>
     </Box>

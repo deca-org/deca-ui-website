@@ -251,7 +251,7 @@ const MDXLayout = ({ children, darkMode }: MDXLayoutProps) => {
                 color: "$text",
               }}
             >
-              Made by Elliot Saha
+              Made by Elliot Madoc
             </Text>
           </Box>
         </Grid>
