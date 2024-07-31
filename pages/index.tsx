@@ -365,23 +365,6 @@ const Home: NextPage = () => {
           }}
         >
           <Container px="md">
-            <Box
-              css={{
-                pt: "$5",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <Box css={{ ml: "auto", mr: "auto" }}>
-                <Image src="/npm-logo.png" alt="NPM" width={80} height={35} />
-              </Box>
-              <Text as="h2" mono center size={{ "@n": "h3", "@xs": "h2" }}>
-                500,000+ Downloads
-              </Text>
-            </Box>
-          </Container>
-          <Container px="md">
             <Box css={{ py: "$5" }}>
               <Box css={{ pb: "$6" }}>
                 <Grid.Container n={12} sm={6} lg={3} spacing="md">
@@ -563,6 +546,7 @@ const Home: NextPage = () => {
             </Grid.Container>
           </Container>
         </Box>
+        <Box css={{ position: "fixed", bottom: 0, paddingBottom: "$2", paddingTop: "$2", backgroundColor: "#FFD583", color: "#7A5307", width: "100%", textAlign: "center", fontWeight: "bold", zIndex: 9999 }}>DecaUI was archived in 2023 as <a href="https://github.com/stitchesjs/stitches/discussions/1149">StitchesJS is no longer maintained.</a></Box>
       </Box>
     </Layout>
   );

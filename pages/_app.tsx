@@ -29,7 +29,7 @@ const Code = styled("code", {
 
 export const ThemeContext = createContext<any>({
   darkMode: false,
-  switchMode: () => {},
+  switchMode: () => { },
 });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
